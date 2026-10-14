@@ -67,3 +67,5 @@ The target machine is another computer, not the current Mac. The Web Presenter m
 - [Blackmagic Streaming Processors manual](https://documents.blackmagicdesign.com/UserManuals/BlackmagicStreamingManual.pdf): setup and current XML format.
 
 Hardware streaming and its latency remain untested. Finish those tests on the target machine with the actual encoder.
+
+Webcam verification on the current Mac: Chrome opened the physical Studio Display Camera at 1920 × 1080, captured JPEGs through the page, saved them under `_media/webcam/`, and loaded them at full resolution in `/live`. Next production build and all six app tests passed; all 43 utility tests passed. These checks do not establish Web Presenter network streaming on the target machine.

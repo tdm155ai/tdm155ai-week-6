@@ -8,7 +8,8 @@ TDM 155AI week 6 (class 2026-10-14): Studies and Skills. A local Next app in `ne
 - A docs-site route (first `/readings`, now `/skills`, `nextjs/app/skills/`): a folder of Markdown with every document listed in a sidebar (folders inside it as headed groups) and the one you click beside it. No previous/next pager. Modeled on the sidebar in `tdm155ai-week-4`.
 - A `/concepts` route (2026-10-14, `nextjs/app/concepts/`): `nextjs/content/concepts/` in two levels, categories first, then one category's concepts at a time. The docs-style routes share `nextjs/app/components/DocsSidebar.jsx`.
 - Names changed: site title, package names.
-- **Removed later on 2026-10-14**, as last week's leftovers: the readings section, the student notebook (`content/notebook/`, `/dictate`, `/transcribe`, the `_media/` folder, the OpenRouter key in `nextjs/.env.local`), and the `/graphics` package (with Tailwind, TypeScript, three, and ogl). The app is now plain JavaScript and CSS with no API routes.
+- **Removed later on 2026-10-14**, as last week's leftovers: the readings section, the student notebook (`content/notebook/`, `/dictate`, `/transcribe`, the OpenRouter key in `nextjs/.env.local`), and the `/graphics` package (with Tailwind, TypeScript, three, and ogl). The app is plain JavaScript and CSS.
+- **Reference capture restored at Marlon's request:** `/capture` takes webcam/UVC stills, `/api/capture` saves them locally to gitignored `_media/webcam/`, and `/live` displays the media gallery. Network streaming is in process; resume from [streaming-server/HANDOFF.md](streaming-server/HANDOFF.md) on the target machine.
 
 ## Layout
 
@@ -23,8 +24,10 @@ TDM 155AI week 6 (class 2026-10-14): Studies and Skills. A local Next app in `ne
 | `nextjs/content/skills/` | The week's Claude skills, explained, at `/skills` with a sidebar |
 | `nextjs/content/explorations/` | Illustrated cases (sequences, studies, practice), at `/explorations` |
 | `nextjs/content/who-used-to-make-this.md` | The headcount essay the home page opens with, at `/who-used-to-make-this` |
-| `utils/` | Text and image generation for OpenRouter, fal, and HUIT; see [utils/README.md](utils/README.md) |
+| `utils/` | Text, image, and video generation; see [utils/README.md](utils/README.md) |
 | `output/` | Gitignored: what the `utils/` scripts make |
+| `_media/` | Gitignored captures and locally added media; only `.gitkeep` is tracked |
+| `streaming-server/` | In-process handoff for the MediaMTX network input; no server implementation yet |
 | `.agents/skills/origin-story/` | The origin-story skill (`.claude/skills/origin-story` links to it), from the `ll-kits` origin-story kit; `examples/` holds its sample plan and script |
 
 ## Routes
@@ -35,6 +38,9 @@ TDM 155AI week 6 (class 2026-10-14): Studies and Skills. A local Next app in `ne
 | `/activities`, `/activities/...` | The day's plan as a docs site: the skills talk and one page per rotation |
 | `/concepts`, `/concepts/<category>/...` | The key concepts in two levels: the sidebar lists the categories, then, inside a category, only that category's concepts (with a link back to all categories) |
 | `/skills`, `/skills/...` | The skills pages as a docs site: sidebar of every document, the chosen one beside it |
+| `/capture` | Webcam still capture, linked from Rotation 3 and the video skills challenge |
+| `/live` | Local `_media/` gallery, newest first, refreshing every five seconds |
+| `/media/...` | Media files, with download and range support |
 | `/explorations`, `/explorations/...` | A gallery of 49 cases, field filtering, and illustrated detail pages with optional exercises |
 | `/who-used-to-make-this`, any other path | Any folder or document in `nextjs/content/` |
 | `/print` | Light print versions: put `/print` in front of any page's address, or `/print/all` |

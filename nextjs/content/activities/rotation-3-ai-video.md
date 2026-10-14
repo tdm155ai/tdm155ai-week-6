@@ -35,12 +35,12 @@ The `utils/` folder at the root of this repo generates text, images, and video f
 
 ```sh
 pnpm image fal "a character sheet: a young lighthouse keeper in a yellow raincoat, front, side, and back views, white background" --model fal-ai/flux/dev
-pnpm video openrouter "the lighthouse keeper walks along the jetty at dusk, handheld, waves on the right" --model google/veo-3.1-lite --duration 4 --resolution 720p --aspect 16:9 --ref output/image/<run>/image-01.png
-pnpm video fal "the same keeper turns to face the camera as the beam sweeps past" --model fal-ai/ltx-2.3/image-to-video/fast --duration 6 --ref output/image/<run>/image-01.png
+pnpm video openrouter "the lighthouse keeper walks along the jetty at dusk, handheld, waves on the right" --model google/veo-3.1-lite --duration 4 --resolution 720p --aspect 16:9 --ref approved-shot.png --dry-run
+pnpm video fal "the same keeper turns to face the camera as the beam sweeps past" --model fal-ai/ltx-2.3/image-to-video/fast --duration 6 --ref approved-shot.png --dry-run
 ```
 
-- `pnpm image` makes the stills: the character sheet, the prop, the background. Add `--ref photo.png` on an editing model to work from a photograph.
-- `pnpm video` makes the clip. With `--ref` the image is the first frame (`--ref-field last_frame` or `reference` on OpenRouter changes what it is for); without it the prompt alone drives the shot. The script submits the job, waits, and prints the path of the `.mp4`. Add `--dry-run` to see the request without spending anything.
+- `pnpm image` makes the stills: the character sheet, the prop, the background. Add `--ref photo.png` on an editing model to work from a photograph. Compose and approve an actual scene image, saved here as `approved-shot.png`, before using it as a first frame. Keep the multi-view character sheet as an identity reference.
+- `pnpm video` makes the clip. With `--ref` the image is the first frame (`--ref-field last_frame` or `reference` on OpenRouter changes what it is for); without it the prompt alone drives the shot. The script submits the job, waits, and prints the path of the `.mp4`. The examples above use `--dry-run` to show the request without spending anything; remove it when ready to generate.
 - Find models with `node utils/list-openrouter-models.mjs --type video` (durations, resolutions, aspect ratios) or `node utils/list-fal-models.mjs --category image-to-video`. `--help` on any script lists its options; [utils/README.md](https://github.com/tdm155ai/tdm155ai-week-6/blob/main/utils/README.md) has the rest.
 - `node utils/stills.mjs clip.mp4` pulls frames and a contact sheet out of a clip, which is how you check continuity between shots.
 
