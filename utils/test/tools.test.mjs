@@ -120,7 +120,7 @@ test('list-openrouter-models run() shows an output column without --type, plain 
   assert.deepEqual(image, ['black-forest-labs/flux.2-klein-4b  FLUX.2 Klein 4B']);
   assert.match(imageErrors[0], /1 image model\. .*generate-image\.mjs openrouter/);
   const bad = [];
-  await listOpenRouterModels(['--type', 'video'], {fetcher: openRouterFetcher, stdout: () => {}, progress: s => bad.push(s), exit: () => {}});
+  await listOpenRouterModels(['--type', 'podcast'], {fetcher: openRouterFetcher, stdout: () => {}, progress: s => bad.push(s), exit: () => {}});
   assert.match(bad[0], /--type must be one of/);
 });
 

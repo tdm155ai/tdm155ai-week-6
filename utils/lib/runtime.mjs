@@ -2,7 +2,7 @@ import {readFileSync, existsSync, mkdirSync, writeFileSync} from 'node:fs';
 import {resolve, join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {parseEnv} from 'node:util';
-import {providers, imageResults, textResult} from './providers.mjs';
+import {providers, imageResults, textResult, videoResults} from './providers.mjs';
 
 export const REPO_ROOT = fileURLToPath(new URL('../../', import.meta.url));
 export function loadConfig(o = {}, environment = process.env, owner = REPO_ROOT) {
@@ -59,6 +59,41 @@ export async function falResult(receipt, headers, deps = {}) {
   }
 }
 
+function jobUrl(value) {
+  const url = new URL(value);
+  if (url.origin !== 'https://openrouter.ai' || !url.pathname.startsWith('/api/v1/videos/') || url.username || url.password) throw new Error('Invalid OpenRouter job URL.');
+  return url.href;
+}
+
+// OpenRouter video jobs: poll the job until it completes (pending → in_progress → completed), every pollMs
+// (the docs suggest tens of seconds; clips take from half a minute to several minutes). A failed, cancelled, or
+// expired job stops here with its error; nothing is resubmitted.
+export async function openrouterJobResult(receipt, headers, deps = {}) {
+  const {fetcher = fetch, signal, sleep = ms => new Promise(done => setTimeout(done, ms)), pollMs = 10_000} = deps;
+  const pollingUrl = jobUrl(receipt.polling_url);
+  for (;;) {
+    signal?.throwIfAborted();
+    let response;
+    try { response = await fetcher(pollingUrl, {headers, signal, redirect: 'error'}); }
+    catch { throw new Error('Network request failed or timed out while polling; resume from the saved receipt.'); }
+    if (!response.ok) throw new Error(`API HTTP ${response.status} while polling the video job; resume from the saved receipt after checking it.`);
+    let status;
+    try { status = await response.json(); } catch { throw new Error('Job status response was not JSON.'); }
+    if (status.status === 'completed') return status;
+    if (['failed', 'cancelled', 'expired'].includes(status.status)) throw new Error(`OpenRouter video job ${status.status}${typeof status.error === 'string' ? `: ${status.error}` : ''}. No automatic resubmission.`);
+    if (!['pending', 'in_progress', 'queued', 'processing'].includes(status.status)) throw new Error('Unexpected OpenRouter job state; resume from the saved receipt after checking it.');
+    await sleep(pollMs);
+  }
+}
+
+function videoFormat(bytes, contentType = '') {
+  const type = String(contentType || '').toLowerCase();
+  if (bytes.subarray(4, 8).toString() === 'ftyp') return type.includes('quicktime') ? 'mov' : 'mp4';
+  if (bytes.subarray(0, 4).equals(Buffer.from([0x1a, 0x45, 0xdf, 0xa3]))) return 'webm';
+  if (type.startsWith('video/')) return type.split('/')[1].split(';')[0].replace('quicktime', 'mov').replace('x-matroska', 'mkv') || 'mp4';
+  throw new Error('Returned file does not look like a video. The response record was retained.');
+}
+
 function imageFormat(bytes) {
   if (bytes.subarray(0, 8).equals(Buffer.from([137,80,78,71,13,10,26,10]))) return 'png';
   if (bytes[0] === 255 && bytes[1] === 216 && bytes[2] === 255) return 'jpg';
@@ -75,6 +110,22 @@ export async function saveResult(kind, result, out, env, deps = {}) {
   if (kind === 'text') {
     if (!text.trim()) throw new Error('Provider returned no usable text; inspect response.json for refusal, filtering, or token exhaustion.');
     return {text, images: []};
+  }
+  if (kind === 'video') {
+    const videos = videoResults(result), saved = [];
+    if (!videos.length) throw new Error('Provider returned no video; inspect response.json for filtering or a failed job.');
+    for (const [i, video] of videos.entries()) {
+      const url = new URL(video.url);
+      if (url.protocol !== 'https:' || url.username || url.password) throw new Error('Video downloads require an HTTPS URL without credentials.');
+      // OpenRouter's content endpoint wants the same Authorization header as the job; CDN downloads never get it.
+      const init = video.auth && deps.authorization ? {headers: {Authorization: deps.authorization}, redirect: 'follow', signal: deps.signal} : {redirect: 'error', signal: deps.signal};
+      const download = await (deps.fetcher || fetch)(url.href, init);
+      if (!download.ok) throw new Error(`Video download failed (HTTP ${download.status}); response.json retains its URL.`);
+      const bytes = Buffer.from(await download.arrayBuffer());
+      const file = join(out, `video-${String(i + 1).padStart(2, '0')}.${videoFormat(bytes, download.headers?.get?.('content-type'))}`);
+      writeFileSync(file, bytes, {flag: 'wx', mode: 0o600}); saved.push(file);
+    }
+    return {text, videos: saved, images: []};
   }
   const images = imageResults(result), saved = [];
   if (!images.length) throw new Error('Provider returned no images; inspect response.json for filtering, a text-only reply, or model incompatibility.');
@@ -103,12 +154,16 @@ export async function execute(kind, request, config, out, o = {}, deps = {}) {
   mkdirSync(resolve(out, '..'), {recursive: true});
   mkdirSync(out, {mode: 0o700});
   const headers = {[p.header]: (p.prefix || '') + key, 'Content-Type': 'application/json'};
-  const signal = AbortSignal.timeout(o.timeout || 600_000);
+  // Video jobs can take many minutes; give them half an hour unless --timeout says otherwise.
+  const signal = AbortSignal.timeout(o.timeout || (kind === 'video' ? 1_800_000 : 600_000));
   const record = {kind, created: new Date().toISOString(), ...request, references: o.references || []};
   saveJson(join(out, 'request.json'), record, config.env);
   const fetcher = deps.fetcher || fetch;
   let result;
-  if (o.receipt) {
+  if (o.receipt?.polling_url) {
+    saveJson(join(out, 'openrouter-request.json'), o.receipt, config.env);
+    result = await openrouterJobResult(o.receipt, headers, {...deps, signal});
+  } else if (o.receipt) {
     saveJson(join(out, 'fal-request.json'), o.receipt, config.env);
     result = await falResult(o.receipt, headers, {...deps, signal});
   } else {
@@ -118,7 +173,13 @@ export async function execute(kind, request, config, out, o = {}, deps = {}) {
       saveJson(join(out, 'fal-request.json'), receipt, config.env);
       (deps.progress || console.error)(`fal request ${receipt.request_id}; receipt: ${join(out, 'fal-request.json')}`);
       result = await falResult(receipt, headers, {...deps, signal});
+    } else if (kind === 'video' && request.provider === 'openrouter') {
+      const receipt = {...result, kind, model: request.model};
+      saveJson(join(out, 'openrouter-request.json'), receipt, config.env);
+      (deps.progress || console.error)(`OpenRouter video job ${receipt.id}; receipt: ${join(out, 'openrouter-request.json')}`);
+      result = await openrouterJobResult(receipt, headers, {...deps, signal});
     }
   }
-  return saveResult(kind, result, out, config.env, {...deps, signal});
+  // Only OpenRouter's own content endpoint gets the key on download (see saveResult).
+  return saveResult(kind, result, out, config.env, {...deps, signal, authorization: request.provider === 'openrouter' ? headers.Authorization : undefined});
 }

@@ -10,5 +10,7 @@ This week has two kinds of skills: the ones you build in yourself through studie
 
 - [What is a Claude skill?](/skills/intro-to-skills) explains how skills work and how to write one.
 - [Origin story](/skills/origin-story) walks through the skill that ships with this repo: it turns your story and photos into a four- or eight-panel comic.
+- [Challenge: build a set of video prompting skills](/skills/video-prompting-challenge) connects character references, shot planning, background plates, and continuity review.
+- [Video prompting references](/skills/reference) collects local reading notes with links to fal, Higgsfield, and model guides.
 
-More skills will be added through the week.
+[Capture reference stills](/capture) from a webcam for the video challenge, then [open the gallery](/live).

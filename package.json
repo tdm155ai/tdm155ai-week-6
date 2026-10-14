@@ -8,6 +8,7 @@
   },
   "scripts": {
     "image": "node utils/generate-image.mjs",
+    "video": "node utils/generate-video.mjs",
     "text": "node utils/generate-text.mjs",
     "batch": "node utils/batch-images.mjs",
     "batch-text": "node utils/batch-text.mjs",

@@ -1,6 +1,6 @@
 # TDM 155AI week 6: instructions for AI assistants
 
-This repository is the week 6 reference and toolkit for TDM 155AI (*Making Stuff in the Age of AI*): Studies and Skills (class October 14, 2026). Students are in the Unit 2 project, in which each researches, learns, and prototypes a form of media they want to make; week 6 is the studies. The site has four sections (activities, concepts, skills, explorations) and the repo has the generation scripts and the origin-story skill. Week 5's student notebook and capture tools are not in this repo (removed 2026-10-14).
+This repository is the week 6 reference and toolkit for TDM 155AI (*Making Stuff in the Age of AI*): Studies and Skills (class October 14, 2026). Students are in the Unit 2 project, in which each researches, learns, and prototypes a form of media they want to make; week 6 is the studies. The site has four sections (activities, concepts, skills, explorations) plus a webcam reference capture tool and local gallery. Week 5's student notebook tools are not in this repo. A minimal still capture was reintroduced at Marlon's request on October 14; network streaming is paused in process, with `streaming-server/HANDOFF.md` for work on the target machine.
 
 ## This week
 
@@ -41,7 +41,7 @@ Relative links between `.md` files work, and an image saved beside a doc shows i
 ## The app and the scripts
 
 - The site is a Next app in `nextjs/`. The student runs it themselves: `cd nextjs`, `pnpm install`, `pnpm dev`. Don't start it in the background.
-- The app is plain JavaScript with its own CSS (`app/globals.css`); no TypeScript, Tailwind, or API routes. Keep it that way.
-- `utils/` (at the repo root, outside the app) has scripts for generating text and images through OpenRouter, fal, and Harvard's HUIT gateways; see [`utils/README.md`](utils/README.md). Run them from the repo root with `pnpm`. What they make lands in `output/`.
+- The app is plain JavaScript with its own CSS (`app/globals.css`); no TypeScript or Tailwind. `/capture`, `/api/capture`, `/media/...`, and `/live` provide local webcam still capture and a gallery. `_media/` is gitignored; captures stay on the machine running Next. Network streaming is in process, not implemented.
+- `utils/` (at the repo root, outside the app) has scripts for generating text, images, and video through OpenRouter, fal, and Harvard's HUIT gateways (video: OpenRouter and fal); see [`utils/README.md`](utils/README.md). Run them from the repo root with `pnpm text`, `pnpm image`, `pnpm video`. What they make lands in `output/`, one folder per run with the request and response records. Video is the rotation 3 tool: `pnpm video openrouter "..." --model google/veo-3.1-lite --duration 4 --ref frame.png` makes a clip from a first frame; `node utils/list-openrouter-models.mjs --type video` and `node utils/list-fal-models.mjs --category image-to-video` list the models.
 - The `origin-story` skill (`.agents/skills/origin-story/`, linked from `.claude/skills/`) turns a student's story and photos into a four- or eight-panel comic with `utils/comic.mjs`; read its `SKILL.md` when a student asks for an origin story or a comic of themselves. Its `references/learning-lab-brief.md` is about four Learning Lab staff and only matters for comics about them. The comic tools need `pnpm install` at the repo root (Sharp).
 - Keys live in the root `.env`, for `utils/` only; the app needs none. Never print, copy, or commit them.

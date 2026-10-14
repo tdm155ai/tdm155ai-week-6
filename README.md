@@ -58,7 +58,11 @@ From the repo root, copy `.env.example` to `.env` and fill in `OPENROUTER_API_KE
 ```sh
 pnpm text openrouter "Reply with the single word HELLO." --model openai/gpt-5-mini --dry-run
 pnpm image fal "a small red apple on a white background" --model fal-ai/flux/dev
+pnpm video openrouter "a paper boat drifts across a puddle" --model google/veo-3.1-lite --duration 4 --resolution 720p
+pnpm video fal "a paper boat drifts across a puddle" --model fal-ai/ltx-2.3/text-to-video/fast --duration 6
 ```
+
+Video (added 2026-10-14) runs through OpenRouter's video jobs API or a fal video endpoint, text-to-video or from a first-frame image (`--ref photo.png`), and saves the clip under `output/video/`.
 
 See [utils/README.md](utils/README.md) for every command.
 

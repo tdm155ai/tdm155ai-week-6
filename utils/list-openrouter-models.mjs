@@ -14,7 +14,8 @@ import {parseArgs} from 'node:util';
 
 export const MODELS_URL = 'https://openrouter.ai/api/v1/models';
 export const IMAGE_MODELS_URL = 'https://openrouter.ai/api/v1/images/models';
-export const TYPES = ['all', 'text', 'image', 'audio'];
+export const VIDEO_MODELS_URL = 'https://openrouter.ai/api/v1/videos/models';
+export const TYPES = ['all', 'text', 'image', 'audio', 'video'];
 
 export function outputs(model) {
   return model.architecture?.output_modalities || ['text'];
@@ -39,13 +40,15 @@ export function filterModels(models, grep) {
 
 // The one or two catalogue requests a --type needs, merged so each id appears once.
 export async function fetchModels({type, fetcher = fetch}) {
-  const urls = type === 'image' ? [IMAGE_MODELS_URL] : type === 'all' ? [MODELS_URL, IMAGE_MODELS_URL] : [MODELS_URL];
+  // `all` merges the chat and image catalogues as before; video models are listed only with --type video.
+  const urls = type === 'image' ? [IMAGE_MODELS_URL] : type === 'video' ? [VIDEO_MODELS_URL] : type === 'all' ? [MODELS_URL, IMAGE_MODELS_URL] : [MODELS_URL];
   const byId = new Map();
   for (const url of urls) {
     const response = await fetcher(url);
     if (!response.ok) throw new Error(`OpenRouter answered HTTP ${response.status}.`);
     const listing = await response.json();
-    for (const m of listing.data || listing) if (!byId.has(m.id)) byId.set(m.id, m);
+    // The video catalogue (/videos/models) describes durations and sizes instead of an architecture block.
+    for (const m of listing.data || listing) if (!byId.has(m.id)) byId.set(m.id, url === VIDEO_MODELS_URL && !m.architecture ? {...m, architecture: {output_modalities: ['video']}} : m);
   }
   return modelsOfType([...byId.values()], type);
 }
@@ -58,7 +61,7 @@ export async function run(argv = process.argv.slice(2), deps = {}) {
   const log = deps.stdout || console.log, err = deps.progress || console.error;
   if (o.help) {
     log(`Usage: node utils/list-openrouter-models.mjs [--type ${TYPES.join('|')}] [--grep TEXT] [--json]
-  --type KIND    What the model produces: text, image, audio, or all (default all)
+  --type KIND    What the model produces: text, image, audio, video, or all (default all); video also shows durations, resolutions, and aspect ratios
   --grep TEXT    Only models whose id or name contains TEXT (case-insensitive)
   --json         Print the raw OpenRouter listing instead of a plain table
 No key is required; this calls OpenRouter's public models endpoints.`);
@@ -79,10 +82,12 @@ No key is required; this calls OpenRouter's public models endpoints.`);
     const kinds = models.map(m => outputs(m).join('+'));
     const kindWidth = Math.max(...kinds.map(k => k.length));
     models.forEach((m, i) => log(`${m.id.padEnd(width)}  ${kinds[i].padEnd(kindWidth)}  ${m.name || ''}`));
+  } else if (o.type === 'video') {
+    for (const m of models) log(`${m.id.padEnd(width)}  ${(m.supported_durations || []).join('/')}s  ${(m.supported_resolutions || []).join('/')}  ${(m.supported_aspect_ratios || []).join(' ')}  ${m.name || ''}`);
   } else {
     for (const m of models) log(`${m.id.padEnd(width)}  ${m.name || ''}`);
   }
-  const script = o.type === 'image' ? 'generate-image.mjs' : 'generate-text.mjs';
+  const script = o.type === 'image' ? 'generate-image.mjs' : o.type === 'video' ? 'generate-video.mjs' : 'generate-text.mjs';
   err(`${models.length} ${label}model${models.length === 1 ? '' : 's'}. Use one as --model with: node utils/${script} openrouter "prompt" --model ID`);
   return models;
 }

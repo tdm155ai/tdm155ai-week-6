@@ -18,6 +18,24 @@ node utils/generate-image.mjs openrouter "a small red apple on a white backgroun
 
 Worked. Model `black-forest-labs/flux.2-klein-4b`. Cost reported: $0.014.
 
+```bash
+node utils/generate-video.mjs openrouter "A paper boat drifts across a rain puddle on a city sidewalk, close up, soft morning light, gentle ripples" --model google/veo-3.1-lite --duration 4 --resolution 720p --aspect 16:9 --audio false
+```
+
+Worked (2026-10-14). Model `google/veo-3.1-lite` through OpenRouter's `/videos` jobs API: submitted, polled about a minute, downloaded a 4-second 1280×720 H.264 clip to `video-01.mp4`. Cost reported: $0.12.
+
+```bash
+node utils/generate-video.mjs openrouter "the lighthouse keeper in the yellow raincoat turns and walks away from the camera, slow handheld, soft light" --model google/veo-3.1-lite --duration 4 --resolution 720p --aspect 16:9 --audio false --ref output/image/<run>/image-01.jpg
+```
+
+Worked (2026-10-14). Image-to-video from a local still sent as a data URL in `frame_images` (`first_frame`); a 4-second 720p clip, about two minutes. Cost reported: $0.12.
+
+```bash
+node utils/list-openrouter-models.mjs --type video
+```
+
+Worked (no key). Thirty video models on 2026-10-14, each with its durations, resolutions, and aspect ratios; `--json` adds the prices.
+
 ## fal
 
 ```bash
@@ -31,6 +49,19 @@ node utils/generate-image.mjs fal "a small red apple on a white background" --mo
 ```
 
 Worked. Model (fal endpoint) `fal-ai/flux/dev`. Cost: not reported in `response.json`.
+
+```bash
+node utils/generate-video.mjs fal "A paper boat drifts across a rain puddle on a city sidewalk, close up, soft morning light, gentle ripples" --model fal-ai/ltx-2.3/text-to-video/fast --duration 6 --resolution 1080p --aspect 16:9 --audio false
+```
+
+Worked (2026-10-14). fal endpoint `fal-ai/ltx-2.3/text-to-video/fast` through the queue: receipt saved, polled under a minute, a 6-second 1920×1080 H.264 clip downloaded to `video-01.mp4`. Cost: not reported in `response.json`.
+
+```bash
+node utils/generate-image.mjs fal "character sheet: a young lighthouse keeper in a yellow raincoat, front view, full body, plain white background, soft studio light, illustration style" --model fal-ai/flux/schnell --aspect 16:9
+node utils/generate-video.mjs fal "the lighthouse keeper in the yellow raincoat turns and walks away from the camera, slow handheld, soft light" --model fal-ai/ltx-2.3/image-to-video/fast --duration 6 --resolution 1080p --audio false --ref output/image/<run>/image-01.jpg
+```
+
+Worked (2026-10-14). Image-to-video from a local still: the JPEG goes up as a data URL in `image_url`, and a 6-second 1920×1080 clip came back. The saved `request.json` omits the image bytes.
 
 ```bash
 node utils/list-fal-models.mjs --limit 20

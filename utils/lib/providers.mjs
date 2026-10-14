@@ -45,6 +45,30 @@ export function buildRequest(kind, provider, model, prompt, o = {}, refs = [], p
       if (o['max-tokens']) body[provider === 'openrouter' ? 'max_tokens' : 'max_completion_tokens'] = o['max-tokens'];
       if (o.temperature !== undefined) body.temperature = o.temperature;
     }
+  } else if (kind === 'video') {
+    // Video is asynchronous on both providers: the request here only submits a job (see runtime.mjs for the polling).
+    if (provider === 'openrouter') {
+      rejectOptions(o, ['fps'], provider);
+      path = '/videos'; body = {...params, model, prompt};
+      for (const [flag, key] of Object.entries({aspect: 'aspect_ratio', resolution: 'resolution', size: 'size', duration: 'duration', seed: 'seed', audio: 'generate_audio'})) if (o[flag] !== undefined) body[key] = o[flag];
+      if (refs.length) {
+        const field = o['ref-field'] || 'first_frame';
+        if (field === 'reference') body.input_references = refs.map(r => ({type: 'image_url', image_url: {url: r.url}}));
+        else if (['first_frame', 'last_frame'].includes(field)) body.frame_images = refs.map(r => ({type: 'image_url', image_url: {url: r.url}, frame_type: field}));
+        else throw new Error('--ref-field for openrouter video must be first_frame (default), last_frame, or reference.');
+      }
+    } else if (provider === 'fal') {
+      rejectOptions(o, ['size'], provider);
+      if (!/^[a-zA-Z0-9_-]+(?:\/[a-zA-Z0-9_.-]+)+$/.test(model) || model.split('/').includes('..')) throw new Error('fal video --model must be an endpoint ID, not a URL.');
+      path = `/${model}`; body = {...params, prompt};
+      for (const [flag, key] of Object.entries({aspect: 'aspect_ratio', resolution: 'resolution', duration: 'duration', seed: 'seed', audio: 'generate_audio', fps: 'fps'})) if (o[flag] !== undefined) body[key] = o[flag];
+      if (refs.length) {
+        const field = o['ref-field'] || 'image_url';
+        if (!['image_url', 'image_urls', 'end_image_url'].includes(field)) throw new Error('--ref-field for fal video must be image_url (default), image_urls, or end_image_url.');
+        if (field !== 'image_urls' && refs.length !== 1) throw new Error(`fal's ${field} takes one reference image.`);
+        body[field] = field === 'image_urls' ? refs.map(r => r.url) : refs[0].url;
+      }
+    } else throw new Error('Video generation is bundled for openrouter and fal only.');
   } else if (provider === 'openrouter') {
     rejectOptions(o, ['ref-field'], provider);
     path = '/images'; body = {...params, model, prompt};
@@ -87,6 +111,16 @@ export function textResult(result) {
   if (typeof chat?.content === 'string') return chat.content;
   const parts = result.output?.message?.content || result.candidates?.[0]?.content?.parts || result.content || chat?.content || [];
   return Array.isArray(parts) ? parts.filter(p => !p.thought).map(p => p.text || '').join('') : '';
+}
+
+// The clips a finished job points at. OpenRouter's content URLs need the API key to download (`auth`); fal's CDN
+// URLs must never receive it.
+export function videoResults(result) {
+  const auth = url => /^https:\/\/openrouter\.ai\//.test(url);
+  if (Array.isArray(result.unsigned_urls)) return result.unsigned_urls.filter(url => typeof url === 'string').map(url => ({url, auth: auth(url)}));
+  if (result.video?.url) return [{url: result.video.url, auth: false}];
+  if (Array.isArray(result.videos)) return result.videos.filter(v => typeof v?.url === 'string').map(v => ({url: v.url, auth: false}));
+  return [];
 }
 
 export function imageResults(result) {
