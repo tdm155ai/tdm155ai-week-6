@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata = {
   title: { default: "Sketches and Studies · TDM 155AI week 6", template: "%s · TDM 155AI week 6" },
-  description: "TDM 155AI week 6: Sketches and Studies. Readings, a notebook, and tools.",
+  description: "TDM 155AI week 6: Sketches and Studies. Concepts, skills, explorations, and a notebook.",
 };
 
 export const viewport = {

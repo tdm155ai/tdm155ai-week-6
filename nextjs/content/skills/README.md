@@ -1,6 +1,6 @@
 ---
-title: Skills
-description: Skills for Claude: what they are, the ones in this repo, and how to make your own.
+title: "Skills"
+description: "Skills for Claude: what they are, the ones in this repo, and how to make your own."
 author: claude
 ---
 

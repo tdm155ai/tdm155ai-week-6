@@ -4,10 +4,11 @@ This repository is a student's notebook for TDM 155AI (*Making Stuff in the Age 
 
 ## Where things go
 
-Everything the site shows is Markdown in `nextjs/content/`, and each file is a page at the same path (`nextjs/content/readings/a.md` is `/readings/a`).
+Everything the site shows is Markdown in `nextjs/content/`, and each file is a page at the same path (`nextjs/content/skills/a.md` is `/skills/a`). There is no readings section (retired 2026-10-14); the week's one shared essay, the headcount in `nextjs/content/who-used-to-make-this.md`, is linked from the home page.
 
-- **`nextjs/content/readings/`**: the reading for the week, one file per item: a link, where it came from, and why it matters. `/readings` shows the folder as a docs site, every document in a sidebar; folders inside it become headed groups.
 - **`nextjs/content/concepts/`**: the week's key concepts. Each category (a field or medium: `music/`, `visual-art/`, …) is a folder whose `README.md` is the category's essay, with one Markdown file per concept. `/concepts` lists the categories in the sidebar; inside a category the sidebar lists only its concepts.
+- **`nextjs/content/explorations/`**: illustrated cases from Madeleine's week 6 collection: sequences, studies, and practice. `/explorations` is a gallery with a field filter. Preserve original authorship, source metadata, image credits, and qualifications. Sections headed `Optional exercises` display separately from the case account; they are suggestions, not assignments. The hidden `_import.json` records copy provenance and corrections.
+- **`nextjs/content/skills/`**: the week's Claude skills, explained: `intro-to-skills.md` and one page per skill (starting with `origin-story.md`). `/skills` shows the folder as a docs site, every document in a sidebar.
 - **`nextjs/content/notebook/`**: the student's own work: their notes, plans, observations, and the notes they dictate on `/dictate` or photograph on `/transcribe`. It's theirs. Don't rewrite or delete their notes; add to the notebook only when they ask, and say what you added.
 - **`nextjs/content/README.md`**: the home page.
 
@@ -23,7 +24,7 @@ author: claude
 ---
 ```
 
-Relative links between `.md` files work, and an image saved beside a doc shows in it. `order:` in the frontmatter sets a document's place in lists and in the readings sidebar (lower first; otherwise by title).
+Relative links between `.md` files work, and an image saved beside a doc shows in it. `order:` in the frontmatter sets a document's place in lists and in the sidebars (lower first; otherwise by title).
 
 ## The app and the scripts
 
