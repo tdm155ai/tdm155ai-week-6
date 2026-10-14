@@ -22,6 +22,7 @@ TDM 155AI week 6 (class 2026-10-14): Sketches and Studies. A local Next app in `
 | `nextjs/_media/` | Gitignored, local only: recordings, photographs, transcription records |
 | `utils/` | Text and image generation for OpenRouter, fal, and HUIT; see [utils/README.md](utils/README.md) |
 | `output/` | Gitignored: what the `utils/` scripts make |
+| `.agents/skills/origin-story/` | The origin-story skill (`.claude/skills/origin-story` links to it), from the `ll-kits` origin-story kit; `examples/` holds its sample plan and script |
 
 ## Routes
 
@@ -50,7 +51,7 @@ Copy `nextjs/.env.example` to `nextjs/.env.local` and set `OPENROUTER_API_KEY`. 
 
 ## Run the scripts
 
-From the repo root, copy `.env.example` to `.env` and fill in `OPENROUTER_API_KEY`, `FAL_API_KEY`, and (optionally) `HUIT_API_KEY`. The scripts need no packages:
+From the repo root, copy `.env.example` to `.env` and fill in `OPENROUTER_API_KEY`, `FAL_API_KEY`, and (optionally) `HUIT_API_KEY`. The text and image scripts need no packages; the comic tools need Sharp, so run `pnpm install` at the root once before using them:
 
 ```sh
 pnpm text openrouter "Reply with the single word HELLO." --model openai/gpt-5-mini --dry-run
@@ -58,3 +59,7 @@ pnpm image fal "a small red apple on a white background" --model fal-ai/flux/dev
 ```
 
 See [utils/README.md](utils/README.md) for every command.
+
+## Origin-story comics
+
+Added 2026-10-14 from the origin-story kit (`ll-26-27/ll-kits`, `kits/origin-story/`). Ask Claude to use the `origin-story` skill with your story, four or eight panels, a style or genre, and optional photos of yourself; say "just go with what you have" to skip its questions. It writes the script first, makes a character sheet from your photos, generates the pages, and builds a folder with an `index.html` reader and gallery (in `~/Downloads` unless you name another place). The tools are `utils/comic.mjs` and `utils/compress-image.mjs` (`pnpm comic`, `pnpm compress-image`); the skill's `references/comic-production.md` has every command.
