@@ -5,6 +5,10 @@ author: claude
 order: 4
 ---
 
+## Start with a reference
+
+**[Open the capture machine](/capture)** to photograph a character pose, a prop, or the studio camera's view. Choose **Start camera**, select your webcam or the Web Presenter's USB input, then capture a still to use in your image and video workflow. **[View your captures in the gallery](/live)**.
+
 ## The skill
 
 - Keeping a character, a prop, and a place the same from shot to shot across generated video: the [character consistency](../concepts/learning-with-ai/character-consistency.md) problem.
