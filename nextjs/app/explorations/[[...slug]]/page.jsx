@@ -42,7 +42,7 @@ export default async function ExplorationsPage({ params }) {
       </> : <>
         <ExplorationArtifacts entry={entry} />
         <ExplorationBody entry={entry} />
-        <nav className="exploration-onward" aria-label="Continue exploring"><Link href="/explorations">← All explorations</Link><Link href="/concepts">Key concepts →</Link><Link href="/readings">Readings →</Link></nav>
+        <nav className="exploration-onward" aria-label="Continue exploring"><Link href="/explorations">← All explorations</Link><Link href="/concepts">Key concepts →</Link></nav>
       </>}
     </main>
     <SiteFooter />
