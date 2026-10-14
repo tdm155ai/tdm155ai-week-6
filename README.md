@@ -7,6 +7,7 @@ TDM 155AI week 6 (class 2026-10-14): Sketches and Studies. A local Next app in `
 - Everything the app shows moved inside it, to `nextjs/content/` (served from the root; its README is the home page). The Notebook's interface read `_content/` and `_context/` from the repo above it; the `/context` mount was dropped.
 - `notebook/` moved to `nextjs/content/notebook/` and `_media/` to `nextjs/_media/` (gitignored).
 - A new `/readings` route (`nextjs/app/readings/`): `nextjs/content/readings/` as a docs site, with every document listed in a sidebar (folders inside it as headed groups) and the one you click beside it. No previous/next pager. Modeled on the sidebar in `tdm155ai-week-4`.
+- A `/concepts` route (2026-10-14, `nextjs/app/concepts/`): `nextjs/content/concepts/` in two levels, categories first, then one category's concepts at a time. Both routes share `nextjs/app/components/DocsSidebar.jsx`.
 - Names changed: site title, package names, OpenRouter `X-Title`, graphics storage keys.
 
 ## Layout
@@ -16,6 +17,7 @@ TDM 155AI week 6 (class 2026-10-14): Sketches and Studies. A local Next app in `
 | `nextjs/` | The app: forced dark, Inter, red accent; `/print` is always light |
 | `nextjs/content/` | The site's Markdown: `content/a/b.md` is `/a/b` |
 | `nextjs/content/readings/` | The week's reading, shown at `/readings` with a sidebar |
+| `nextjs/content/concepts/` | The key concepts: one folder per category, its README the category's essay, at `/concepts` |
 | `nextjs/content/notebook/` | Dictated and photographed notes, newest first, at `/notebook` |
 | `nextjs/_media/` | Gitignored, local only: recordings, photographs, transcription records |
 | `utils/` | Text and image generation for OpenRouter, fal, and HUIT; see [utils/README.md](utils/README.md) |
@@ -27,6 +29,7 @@ TDM 155AI week 6 (class 2026-10-14): Sketches and Studies. A local Next app in `
 | --- | --- |
 | `/` | The home page (`nextjs/content/README.md`), the tools, and a map of everything |
 | `/readings`, `/readings/...` | The readings as a docs site: sidebar of every document, the chosen one beside it |
+| `/concepts`, `/concepts/<category>/...` | The key concepts in two levels: the sidebar lists the categories, then, inside a category, only that category's concepts (with a link back to all categories) |
 | `/notebook/...`, any other path | Any folder or document in `nextjs/content/` |
 | `/dictate` | Record a note; it is transcribed and cleaned up on OpenRouter and written to `nextjs/content/notebook/` |
 | `/transcribe` | Photograph or upload pages; a faithful transcription is written to `nextjs/content/notebook/` |

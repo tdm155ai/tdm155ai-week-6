@@ -338,6 +338,18 @@ body:has(.print-root) { background: #ffffff; color-scheme: light; }
 .docs-heading { max-width: 760px; margin-bottom: 40px; }
 .docs-heading h1 { margin: 14px 0 16px; font-size: clamp(34px, 4.5vw, 56px); line-height: 1.02; letter-spacing: -.045em; text-wrap: balance; }
 .docs-heading .updated code { font-family: ui-monospace, monospace; font-size: 12px; color: var(--ink); }
+.sidebar-back { display: block; margin-bottom: 18px; }
+.sidebar-back:hover { color: var(--accent); }
+.sidebar-category-title { display: block; margin-bottom: 12px; font-size: 18px; font-weight: 750; letter-spacing: -.02em; }
+.sidebar-category-title:hover, .sidebar-category-title[aria-current="page"] { color: var(--accent); }
+.sidebar-category { display: flex; justify-content: space-between; gap: 12px; }
+.sidebar-count { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.category-index { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; max-width: 900px; margin: 32px 0 0; padding: 0; list-style: none; }
+.category-index a { display: flex; flex-direction: column; gap: 8px; height: 100%; padding: 18px 20px; border: 1px solid var(--line); border-radius: 10px; background: var(--wash); }
+.category-index a:hover { border-color: var(--accent); }
+.category-index a:hover strong { color: var(--accent); }
+.category-index strong { font-size: 18px; letter-spacing: -.02em; }
+.category-note { color: var(--muted); font-size: 14px; line-height: 1.5; }
 .readings-index { max-width: 740px; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
 .readings-index li { display: flex; flex-direction: column; gap: 4px; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .readings-index a { font-weight: 650; }
