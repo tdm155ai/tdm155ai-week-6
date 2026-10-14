@@ -15,18 +15,16 @@ export const site = {
 // home page. Every file is a page, and every folder is a page too, showing its README.md (if any) above a list of what
 // it holds. Names starting with "_" or "." are skipped inside a folder.
 // - content/concepts/ and content/skills/ are shown as docs sites (app/concepts/, app/skills/), with every document in a sidebar; the
-//   readings folder was retired 2026-10-14 (app/readings/ remains but has nothing to show).
-// - content/notebook/ is where dictated and photographed notes are written, at /notebook.
+//   readings folder and route were retired 2026-10-14.
 // - content/ai-research/ (if there is one) is labeled as written with AI on every page.
 const contentRoot = path.join(/* turbopackIgnore: true */ process.cwd(), "content");
-export const notebookRoot = path.join(contentRoot, "notebook");
 
 // Pages under content/ai-research/ say they were written with AI.
 export function isAiGenerated(entry) {
   return entry.slug === "ai-research" || entry.slug.startsWith("ai-research/");
 }
 
-// Where an entry lives in the repo, as shown on its page: nextjs/content/skills/a.md, nextjs/content/notebook/.
+// Where an entry lives in the repo, as shown on its page: nextjs/content/skills/a.md, nextjs/content/skills/.
 function sourcePath(slug, kind) {
   return `nextjs/content${slug ? `/${slug}` : ""}${kind === "folder" ? "/" : ".md"}`;
 }

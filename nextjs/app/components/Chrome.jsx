@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { site } from "../../lib/content.mjs";
 
-// `current` marks the page you're on: "concepts", "skills", "explorations", or nothing (readings, dictate, and transcribe still pass theirs).
+// `current` marks the page you're on: "concepts", "skills", "explorations", or nothing.
 export function SiteHeader({ current = "" }) {
   return (
     <header className="site-header">

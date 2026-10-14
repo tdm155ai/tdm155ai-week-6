@@ -257,47 +257,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 @media (max-width: 640px) { .tools { grid-template-columns: 1fr; } }
 .site-header nav a[aria-current="page"] { color: var(--accent); }
 .print-link, .inline-link { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
-.capture-heading code, .empty-state code { padding: .05em .3em; border: 1px solid var(--line); border-radius: 4px; background: var(--code); color: var(--ink); font-family: ui-monospace, monospace; font-size: .86em; }
-
-/* --- /dictate: dictate a note, get a doc back --- */
-.capture-main { width: min(100%, 960px); margin: 0 auto; padding: 44px var(--gutter) 100px; }
-.capture-heading h1 { margin: 16px 0 12px; font-size: clamp(40px, 6vw, 68px); line-height: .98; letter-spacing: -.055em; }
-.capture-heading p:last-child { max-width: 640px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.6; }
-.capture-bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px; margin: 36px 0 18px; }
-.capture-device { display: grid; gap: 6px; }
-.capture-device select { font-family: inherit; font-size: 14px; color: var(--ink); background: var(--wash); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; max-width: 360px; }
-.capture-models { color: var(--muted); font-size: 12px; }
-.capture-hint { display: grid; gap: 6px; margin-bottom: 22px; }
-.capture-hint textarea { font: inherit; font-size: 15px; line-height: 1.5; color: var(--ink); background: var(--wash); border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; resize: vertical; }
-.capture-hint textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
-.capture-recorder { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; padding: 28px; border: 1px solid var(--line); border-radius: 12px; background: var(--wash); }
-.capture-button { display: inline-flex; align-items: center; gap: 12px; font-family: inherit; font-size: 22px; font-weight: 800; line-height: 1; letter-spacing: -.02em; color: var(--paper); background: var(--accent); border: 0; border-radius: 999px; padding: 20px 40px; cursor: pointer; }
-.capture-button:disabled { opacity: .5; cursor: default; }
-.capture-button:not(:disabled):active { transform: scale(.97); }
-.capture-button:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
-.capture-button-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--paper); }
-.capture-recording .capture-button { background: var(--ink); }
-.capture-recording .capture-button-dot { border-radius: 3px; background: var(--accent); animation: capture-pulse 1.2s infinite; }
-@keyframes capture-pulse { 50% { opacity: .35; } }
-.capture-clock { font-size: 28px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
-.capture-meter { flex: 1 1 160px; height: 8px; border-radius: 999px; background: var(--line); overflow: hidden; }
-.capture-meter span { display: block; height: 100%; background: var(--accent); transition: width .08s linear; }
-.capture-status { margin: 14px 0 0; font-size: 14px; min-height: 1.5em; overflow-wrap: anywhere; }
-.capture-status-muted { color: var(--muted); }
-.capture-status-ok { color: var(--ok); }
-.capture-status-warn { color: var(--accent); }
-.capture-status-error { color: var(--error); font-weight: 600; }
-.capture-recent { list-style: none; margin: 36px 0 0; padding: 0; border-top: 1px solid var(--line); }
-.capture-recent li { display: grid; gap: 6px; padding: 20px 0; border-bottom: 1px solid var(--line); }
-.capture-recent strong { font-size: 21px; letter-spacing: -.03em; }
-.capture-recent a strong { color: var(--accent); }
-.capture-recent a:hover strong { text-decoration: underline; }
-.capture-recent details summary { cursor: pointer; color: var(--muted); font-size: 12px; }
-.capture-note { font-size: 12px; line-height: 1.4; overflow-wrap: anywhere; }
-.capture-link { justify-self: start; color: var(--accent); font-size: 13px; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
-.capture-copy { justify-self: start; font-family: inherit; font-size: 11px; font-weight: 600; color: var(--ink); background: var(--wash); border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; cursor: pointer; }
-.capture-copy:not(:disabled):hover { border-color: var(--accent); }
-.capture-lede { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.empty-state code { padding: .05em .3em; border: 1px solid var(--line); border-radius: 4px; background: var(--code); color: var(--ink); font-family: ui-monospace, monospace; font-size: .86em; }
 
 /* --- print surface: the one light theme, for /print/* (from tdm155ai-week-3) --- */
 body:has(.print-root) { background: #ffffff; color-scheme: light; }
@@ -329,52 +289,6 @@ body:has(.print-root) { background: #ffffff; color-scheme: light; }
   html, body { background: #fff !important; color: #111 !important; }
 }
 
-/* Transcriptions run long: keep their line breaks and let them scroll. */
-.capture-description { margin: 8px 0 0; font-size: 13px; line-height: 1.5; white-space: pre-line; max-height: 16em; overflow-y: auto; }
-
-/* Photographed notes */
-.photo-capture { margin-top: 32px; }
-.photo-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 16px 0; }
-.photo-secondary, .photo-upload { font: inherit; font-size: 14px; color: var(--ink); background: var(--wash); border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; cursor: pointer; }
-.photo-secondary:disabled { opacity: .45; cursor: default; }
-.photo-secondary:focus-visible, .photo-upload:focus-within { outline: 2px solid var(--accent); outline-offset: 3px; }
-.photo-upload { position: relative; overflow: hidden; }
-.photo-upload input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
-.photo-camera video { display: block; width: 100%; max-height: 65vh; object-fit: contain; background: #000; border: 1px solid var(--line); border-radius: 12px; }
-.photo-pages { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; padding: 0; margin: 28px 0; list-style: none; }
-.photo-pages li { min-width: 0; border: 1px solid var(--line); border-radius: 10px; padding: 12px; }
-.photo-pages img { width: 100%; height: 220px; object-fit: contain; background: var(--wash); }
-.photo-pages li > span { display: block; margin-top: 10px; font-size: 12px; overflow-wrap: anywhere; }
-.photo-pages .photo-secondary { padding: 8px 10px; font-size: 12px; }
-
-/* The Notebook, with a small cinematic detour. */
-.notebook-wink { max-width: 760px; margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line); }
-.notebook-wink p { margin: 0 0 12px; font-size: 16px; line-height: 1.6; }
-.notebook-wink p span { color: var(--muted); }
-.notebook-wink > div { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
-.notebook-wink a { color: var(--accent); font-size: 14px; text-decoration: underline; text-underline-offset: 4px; }
-.gosling-trigger { padding: 4px 0; border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 11px; letter-spacing: .08em; cursor: pointer; }
-.gosling-trigger:hover { color: var(--ink); }
-.gosling-trigger:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-.gosling-modes { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; }
-.gosling-modes button { border: 0; border-radius: 999px; padding: 7px 11px; background: transparent; color: var(--muted); font: inherit; font-size: 11px; cursor: pointer; }
-.gosling-modes button[aria-pressed="true"] { background: var(--wash); color: var(--ink); }
-.gosling-modes button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.gosling-sound:disabled { opacity: .45; cursor: default; }
-.gosling-background { position: fixed; inset: 0; z-index: 0; overflow: hidden; background: #000; pointer-events: none; container-type: size; }
-/* The footage is cinema-wide; YouTube still contains it in a 16:9 player.
-   Size for the visible footage, cropping the player's empty bands as well.
-   Container units follow the actual screen area, including mobile browser resizing. */
-.gosling-background iframe { position: absolute; top: 50%; left: 50%; width: max(100cqw, 240cqh); height: max(135cqh, 56.25cqw); max-width: none; transform: translate(-50%, -50%); border: 0; }
-.gosling-shade { position: absolute; inset: 0; background: rgb(8 12 10 / 0); }
-.gosling-playing > .site-header, .gosling-playing > main, .gosling-playing > .site-footer { position: relative; z-index: 1; }
-.gosling-playing .tool-card, .gosling-playing .step { background: rgb(18 20 18 / .8); }
-.gosling-controls { position: fixed; right: 24px; bottom: 24px; z-index: 5; display: flex; flex-wrap: wrap; gap: 8px; }
-.gosling-controls button { padding: 12px 16px; border: 1px solid rgb(255 255 255 / .3); border-radius: 999px; background: rgb(18 20 18 / .9); color: #ecece6; font: inherit; font-size: 12px; cursor: pointer; }
-.gosling-controls button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-@media (max-width: 640px) { .gosling-controls { right: 12px; bottom: 12px; left: 12px; justify-content: flex-end; } }
-@media print { .gosling-trigger, .gosling-background, .gosling-controls { display: none !important; } }
-
 /* --- folder tools: smaller buttons side by side at the top of a folder page (`tools:` in its README) --- */
 .folder-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; max-width: 900px; margin: 0 0 40px; }
 .folder-tool { display: grid; gap: 6px; padding: 20px 24px; border-radius: 14px; background: var(--accent); color: var(--accent-ink); transition: transform .15s, box-shadow .15s; }
@@ -384,15 +298,7 @@ body:has(.print-root) { background: #ffffff; color-scheme: light; }
 .folder-tool-copy { font-size: 14px; line-height: 1.45; opacity: .85; }
 .folder-list-heading { margin: 8px 0 12px; font-size: clamp(28px, 3.6vw, 44px); font-weight: 800; letter-spacing: -.045em; line-height: 1; }
 
-/* --- your own OpenRouter key, asked for on /dictate and /transcribe when the app has none --- */
-.api-key { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; margin: 0 0 22px; padding: 18px 20px; border: 1px solid var(--accent); border-radius: 10px; }
-.api-key label { display: grid; gap: 6px; flex: 1 1 280px; }
-.api-key input { font: inherit; font-size: 15px; color: var(--ink); background: var(--wash); border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; }
-.api-key input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
-.api-key .capture-lede { flex-basis: 100%; }
-.api-key-set { align-items: center; justify-content: space-between; border-color: var(--line); font-size: 14px; color: var(--muted); }
-
-/* --- /readings: a docs site, sidebar of every document beside the one you're reading --- */
+/* --- docs sites (/concepts, /skills): sidebar of every document beside the one you're reading --- */
 .docs-shell { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); min-height: calc(100vh - 160px); padding: 0 var(--gutter); }
 .docs-sidebar { position: sticky; top: 0; align-self: start; max-height: 100vh; overflow-y: auto; padding: 36px 0 60px; padding-right: 20px; }
 .sidebar-title { display: block; margin-bottom: 16px; }

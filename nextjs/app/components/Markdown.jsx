@@ -3,7 +3,7 @@ import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import { resolveMarkdownHref } from "../../lib/content.mjs";
 
-// A relative image path is a file beside the Markdown (in docs/ or notebook/), served by app/context-media/.
+// A relative image path is a file beside the Markdown (in content/), served by app/context-media/.
 function resolveMediaSrc(src, dir) {
   if (typeof src !== "string" || /^(?:[a-z][a-z0-9+.-]*:|\/|#)/i.test(src)) return src;
   const parts = [...dir.split("/"), ...src.split("/")].filter((part) => part && part !== ".");

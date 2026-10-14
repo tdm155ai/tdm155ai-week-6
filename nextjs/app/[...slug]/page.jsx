@@ -4,11 +4,11 @@ import { getEntry, isAiGenerated } from "../../lib/content.mjs";
 import { SiteFooter, SiteHeader } from "../components/Chrome.jsx";
 import Markdown from "../components/Markdown.jsx";
 
-// Notebook entries are written while the app runs; always read the current files.
+// Content is edited while the app runs; always read the current files.
 export const dynamic = "force-dynamic";
 
-// Every file and folder in content/ (content/notebook/a.md is /notebook/a); see lib/content.mjs. /readings has its own
-// route (app/readings/), with a sidebar. Nothing is prerendered: pages read the current files on each request.
+// Every file and folder in content/ (content/skills/a.md is /skills/a); see lib/content.mjs. /concepts, /skills, and /explorations have their own
+// routes (app/concepts/, app/skills/, app/explorations/). Nothing is prerendered: pages read the current files on each request.
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;

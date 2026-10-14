@@ -1,7 +1,6 @@
 import { getRoot, site } from "../lib/content.mjs";
 import { SiteFooter, SiteHeader } from "./components/Chrome.jsx";
 import Markdown from "./components/Markdown.jsx";
-import NotebookWink from "./components/NotebookWink.jsx";
 
 export const dynamic = "force-dynamic";
 
@@ -19,7 +18,6 @@ export default async function Home() {
           <h1 id="site-title">{root.title === "Home" ? site.title : root.title}</h1>
           {root.description && <p className="hero-deck">{root.description}</p>}
           {root.content.trim() && <article className="prose hero-intro"><Markdown doc={root} /></article>}
-          <NotebookWink />
         </section>
 
       </main>

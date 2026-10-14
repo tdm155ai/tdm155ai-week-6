@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Markdown from "./Markdown.jsx";
 
-// The sidebar pieces shared by the docs-style routes (/readings, /concepts).
+// The sidebar pieces shared by the docs-style routes (/concepts, /skills).
 
 // A folder's documents as links, with the folders inside it as headed groups (`top` leaves off the folder's own heading).
 export function SidebarFolder({ folder, current, top = false }) {

@@ -1,14 +1,14 @@
 # tdm155ai-week-6
 
-TDM 155AI week 6 (class 2026-10-14): Sketches and Studies. A local Next app in `nextjs/` that renders a folder of Markdown as three docs-style sections (`/concepts`, `/skills`, `/explorations`), with dictation and photo transcription into a notebook, and the generation scripts for OpenRouter, fal, and HUIT in `utils/`. Private; nested in `ll-26-27/the-notebook` at `apps/tdm155ai-week-6/`.
+TDM 155AI week 6 (class 2026-10-14): Sketches and Studies. A local Next app in `nextjs/` that renders a folder of Markdown as three sections (`/concepts`, `/skills`, `/explorations`), and the generation scripts for OpenRouter, fal, and HUIT in `utils/`. Private; nested in `ll-26-27/the-notebook` at `apps/tdm155ai-week-6/`.
 
 **Copied 2026-10-14 from The Notebook's `interface/`** (`ll-26-27/the-notebook` at `e75a6a3`), every tracked file except its own notes and README, then changed:
 
 - Everything the app shows moved inside it, to `nextjs/content/` (served from the root; its README is the home page). The Notebook's interface read `_content/` and `_context/` from the repo above it; the `/context` mount was dropped.
-- `notebook/` moved to `nextjs/content/notebook/` and `_media/` to `nextjs/_media/` (gitignored).
-- A docs-site route (first `/readings`, now `/skills`, `nextjs/app/skills/`): a folder of Markdown with every document listed in a sidebar (folders inside it as headed groups) and the one you click beside it. No previous/next pager. Modeled on the sidebar in `tdm155ai-week-4`. The readings section was retired later on 2026-10-14; `nextjs/app/readings/` is still in the code but `nextjs/content/readings/` is gone.
+- A docs-site route (first `/readings`, now `/skills`, `nextjs/app/skills/`): a folder of Markdown with every document listed in a sidebar (folders inside it as headed groups) and the one you click beside it. No previous/next pager. Modeled on the sidebar in `tdm155ai-week-4`.
 - A `/concepts` route (2026-10-14, `nextjs/app/concepts/`): `nextjs/content/concepts/` in two levels, categories first, then one category's concepts at a time. The docs-style routes share `nextjs/app/components/DocsSidebar.jsx`.
-- Names changed: site title, package names, OpenRouter `X-Title`, graphics storage keys.
+- Names changed: site title, package names.
+- **Removed later on 2026-10-14**, as last week's leftovers: the readings section, the student notebook (`content/notebook/`, `/dictate`, `/transcribe`, the `_media/` folder, the OpenRouter key in `nextjs/.env.local`), and the `/graphics` package (with Tailwind, TypeScript, three, and ogl). The app is now plain JavaScript and CSS with no API routes.
 
 ## Layout
 
@@ -22,9 +22,6 @@ TDM 155AI week 6 (class 2026-10-14): Sketches and Studies. A local Next app in `
 | `nextjs/content/skills/` | The week's Claude skills, explained, at `/skills` with a sidebar |
 | `nextjs/content/explorations/` | Illustrated cases (sequences, studies, practice), at `/explorations` |
 | `nextjs/content/who-used-to-make-this.md` | The headcount essay the home page opens with, at `/who-used-to-make-this` |
-| `nextjs/content/explorations/` | Madeleine's illustrated cases and optional exercise suggestions, at `/explorations` |
-| `nextjs/content/notebook/` | Dictated and photographed notes, newest first, at `/notebook` |
-| `nextjs/_media/` | Gitignored, local only: recordings, photographs, transcription records |
 | `utils/` | Text and image generation for OpenRouter, fal, and HUIT; see [utils/README.md](utils/README.md) |
 | `output/` | Gitignored: what the `utils/` scripts make |
 | `.agents/skills/origin-story/` | The origin-story skill (`.claude/skills/origin-story` links to it), from the `ll-kits` origin-story kit; `examples/` holds its sample plan and script |
@@ -33,15 +30,11 @@ TDM 155AI week 6 (class 2026-10-14): Sketches and Studies. A local Next app in `
 
 | URL | What |
 | --- | --- |
-| `/` | The home page (`nextjs/content/README.md`), the tools, and a map of everything |
-| `/skills`, `/skills/...` | The skills pages as a docs site: sidebar of every document, the chosen one beside it |
-| `/explorations`, `/explorations/...` | The gallery of cases, with a field filter, and each case's page |
+| `/` | The home page: the intro essay in `nextjs/content/README.md` |
 | `/concepts`, `/concepts/<category>/...` | The key concepts in two levels: the sidebar lists the categories, then, inside a category, only that category's concepts (with a link back to all categories) |
+| `/skills`, `/skills/...` | The skills pages as a docs site: sidebar of every document, the chosen one beside it |
 | `/explorations`, `/explorations/...` | A gallery of 49 cases, field filtering, and illustrated detail pages with optional exercises |
-| `/notebook/...`, any other path | Any folder or document in `nextjs/content/` |
-| `/dictate` | Record a note; it is transcribed and cleaned up on OpenRouter and written to `nextjs/content/notebook/` |
-| `/transcribe` | Photograph or upload pages; a faithful transcription is written to `nextjs/content/notebook/` |
-| `/graphics`, `/graphics/record` | Lower thirds, titles, and corner bugs; the webcam with a graphic on top, recorded to `nextjs/_media/recordings/` |
+| `/who-used-to-make-this`, any other path | Any folder or document in `nextjs/content/` |
 | `/print` | Light print versions: put `/print` in front of any page's address, or `/print/all` |
 
 ## Run the app
@@ -54,7 +47,7 @@ pnpm install
 pnpm dev
 ```
 
-Copy `nextjs/.env.example` to `nextjs/.env.local` and set `OPENROUTER_API_KEY`. Without it, `/dictate` and `/transcribe` ask for the user's own key and keep it in that browser. Restart `pnpm dev` after editing it. Tests: `pnpm test` in `nextjs/`.
+The app needs no keys. Tests: `pnpm test` in `nextjs/`.
 
 ## Run the scripts
 
