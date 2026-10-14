@@ -7,6 +7,7 @@ export const explorationGroups = [
   { key: "sequences", title: "Studies and works", description: "Related sketches, studies, and the works they illuminate." },
   { key: "studies", title: "Sketches and working records", description: "Preparatory drawings, scores, storyboards, models, and production records." },
   { key: "practice", title: "Practice and rehearsal", description: "Ways people train, repeat, and refine a craft, with optional exercises." },
+  { key: "texts", title: "In their own words", description: "Makers and teachers on study and practice, in excerpts from public-domain editions." },
 ];
 
 export function licenseUrl(credit = "") {

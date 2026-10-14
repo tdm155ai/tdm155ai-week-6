@@ -327,6 +327,148 @@
       "changes": [
         "Exercise suggestions labeled optional."
       ]
+    },
+    {
+      "destination": "explorations/texts/bach-inventions-title-page.md",
+      "source": "apps/web/context-pack/texts/bach-inventions-title-page.md",
+      "source_sha256": "e3670617944ed533b02aee119e6bf771d82a598405583029970de7d763720f60",
+      "changes": [
+        "Removed the body H1 (the page shows the title)."
+      ]
+    },
+    {
+      "destination": "explorations/texts/cennini-book-of-the-art.md",
+      "source": "apps/web/context-pack/texts/cennini-book-of-the-art.md",
+      "source_sha256": "0962aef75e4699fbe2df8232aca1c2c2f3ae6620f88842668ac54dcb06d589bb",
+      "changes": [
+        "Removed the body H1 (the page shows the title).",
+        "Added a Related line linking the case(s) this text accompanies."
+      ]
+    },
+    {
+      "destination": "explorations/texts/constable-letters.md",
+      "source": "apps/web/context-pack/texts/constable-letters.md",
+      "source_sha256": "f7dacec462d66857f5a51aa60f054dbae1551074f4066c87713f4512a5ec0e72",
+      "changes": [
+        "Removed the body H1 (the page shows the title).",
+        "Added a Related line linking the case(s) this text accompanies."
+      ]
+    },
+    {
+      "destination": "explorations/texts/czerny-letters-to-a-young-lady.md",
+      "source": "apps/web/context-pack/texts/czerny-letters-to-a-young-lady.md",
+      "source_sha256": "3e9a3d034871001818414c061db2399874e697909c91a7101d7c8f70758f6013",
+      "changes": [
+        "Removed the body H1 (the page shows the title)."
+      ]
+    },
+    {
+      "destination": "explorations/texts/feuillet-weaver-orchesography.md",
+      "source": "apps/web/context-pack/texts/feuillet-weaver-orchesography.md",
+      "source_sha256": "8099e8540c13fa02102dde53e8d6a1245c6c3b942ba926b5403f95d2bce08659",
+      "changes": [
+        "Removed the body H1 (the page shows the title).",
+        "Added a Related line linking the case(s) this text accompanies."
+      ]
+    },
+    {
+      "destination": "explorations/texts/franklin-autobiography.md",
+      "source": "apps/web/context-pack/texts/franklin-autobiography.md",
+      "source_sha256": "fcf758aeb883f498ed1e16f2ef2184059cab53bd2f8a88a352616ecdebdd8a8e",
+      "changes": [
+        "Removed the body H1 (the page shows the title).",
+        "Added a Related line linking the case(s) this text accompanies."
+      ]
+    },
+    {
+      "destination": "explorations/texts/fux-gradus-ad-parnassum.md",
+      "source": "apps/web/context-pack/texts/fux-gradus-ad-parnassum.md",
+      "source_sha256": "0e0e8af970a634f83a9590ad954b59ae568cc97c0e3bcad1afc3e867a26669f7",
+      "changes": [
+        "Removed the body H1 (the page shows the title).",
+        "Added a Related line linking the case(s) this text accompanies."
+      ]
+    },
+    {
+      "destination": "explorations/texts/hokusai-hundred-views-of-fuji-postscript.md",
+      "source": "apps/web/context-pack/texts/hokusai-hundred-views-of-fuji-postscript.md",
+      "source_sha256": "ba9d7658db37b53de02f028480b7409f6432039f8f4e28ac771a49c5de50cb39",
+      "changes": [
+        "Removed the body H1 (the page shows the title).",
+        "Added a Related line linking the case(s) this text accompanies."
+      ]
+    },
+    {
+      "destination": "explorations/texts/jaques-dalcroze-rhythm-music-and-education.md",
+      "source": "apps/web/context-pack/texts/jaques-dalcroze-rhythm-music-and-education.md",
+      "source_sha256": "68826891a9572e53ac18c3bf3adafcf9e315da10c28b16461508c391620a9193",
+      "changes": [
+        "Removed the body H1 (the page shows the title).",
+        "Added a Related line linking the case(s) this text accompanies."
+      ]
+    },
+    {
+      "destination": "explorations/texts/leonardo-notebooks.md",
+      "source": "apps/web/context-pack/texts/leonardo-notebooks.md",
+      "source_sha256": "5ececba6f3ff0392b7ad0a86955e48839c251dfbc22987b12cb35891e89cc7a4",
+      "changes": [
+        "Removed the body H1 (the page shows the title).",
+        "Added a Related line linking the case(s) this text accompanies."
+      ]
+    },
+    {
+      "destination": "explorations/texts/leonardo-treatise-on-painting.md",
+      "source": "apps/web/context-pack/texts/leonardo-treatise-on-painting.md",
+      "source_sha256": "4ee59d856ee3cb467e3c073467f553d33fce00ace70a8f625c8ebfd33beed106",
+      "changes": [
+        "Removed the body H1 (the page shows the title).",
+        "Added a Related line linking the case(s) this text accompanies."
+      ]
+    },
+    {
+      "destination": "explorations/texts/lessing-hamburg-dramaturgy.md",
+      "source": "apps/web/context-pack/texts/lessing-hamburg-dramaturgy.md",
+      "source_sha256": "aa1caf657e5a13a2dc43fa7eec054cdb11fdb464d86486e374c9ac71e35bfb18",
+      "changes": [
+        "Removed the body H1 (the page shows the title).",
+        "Added a Related line linking the case(s) this text accompanies."
+      ]
+    },
+    {
+      "destination": "explorations/texts/quintilian-institutio-oratoria.md",
+      "source": "apps/web/context-pack/texts/quintilian-institutio-oratoria.md",
+      "source_sha256": "126d46d27190abbd2d145520559bf74c9139e1ba6f5bddfc5b8ce121057eed01",
+      "changes": [
+        "Fixed the unusable year 'c. CE' to 'c. 95 CE'.",
+        "Removed the body H1 (the page shows the title).",
+        "Added a Related line linking the case(s) this text accompanies."
+      ]
+    },
+    {
+      "destination": "explorations/texts/rainolde-foundacion-of-rhetorike.md",
+      "source": "apps/web/context-pack/texts/rainolde-foundacion-of-rhetorike.md",
+      "source_sha256": "d8a3e977d8e527522336d8983497dd046d25ec66e3a12087c5f00214235d43b8",
+      "changes": [
+        "Removed the body H1 (the page shows the title).",
+        "Added a Related line linking the case(s) this text accompanies."
+      ]
+    },
+    {
+      "destination": "explorations/texts/reynolds-discourses.md",
+      "source": "apps/web/context-pack/texts/reynolds-discourses.md",
+      "source_sha256": "d31ebcbc8fbd18f6915f854bdbf496d0b817e6fc96a810ab207080b168a72aaf",
+      "changes": [
+        "Removed the body H1 (the page shows the title)."
+      ]
+    },
+    {
+      "destination": "explorations/texts/stanislavski-my-life-in-art.md",
+      "source": "apps/web/context-pack/texts/stanislavski-my-life-in-art.md",
+      "source_sha256": "8235cc143883424445021555166628f96f4b2cf60c4a442528a58ffec1867445",
+      "changes": [
+        "Removed the body H1 (the page shows the title).",
+        "Added a Related line linking the case(s) this text accompanies."
+      ]
     }
   ]
 }
