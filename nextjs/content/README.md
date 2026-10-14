@@ -24,6 +24,10 @@ We'll answer it in two directions at once.
 
 The [concepts](/concepts) are the vocabulary for both: what each field calls its studies, how people learn, and what changes when a model can do the work. The [explorations](/explorations) are examples to take inspiration from: how artists, makers, and learners have thought about studies and skills, learning and practice, over time, in their own sketches, drafts, and routines. [Skills](/skills) is where we build the second kind, starting with how Claude skills work.
 
+## Today
+
+We start with a conversation about both kinds of skill. Then the lab splits into three zones, each built around one skill you can practice in the room and get better at before you leave it. In the camera zone we're focusing on focus: Lensbabies on the video cameras, prime lenses shot wide open on the DSLRs, manual and autofocus on every camera, until you can put the plane of sharpness exactly where you mean it. In the print zone, three groups each take one step of a block print, trace and transfer, cut, print, and hand it on, so the hard part is the hand-off, which is how work gets split among people and, now, between people and AI agents. In the video zone you build character sheets, props, and backgrounds and try to keep them the same from shot to shot, with scripts that do what an app like Higgsfield hides behind its interface. [The activities are here.](/activities)
+
 ## This week's practice
 
 Choose a skill you'd like to internalize yourself, or, alternatively, help Claude "internalize" it by creating a Claude skill. At least one thing, and hopefully more than one. It should be something that will be valuable for your project: either something you yourself want to learn and internalize, or something you want to learn to *externalize* by developing a skill for Claude. [The details are in Activities.](/activities/practice)
