@@ -1,6 +1,6 @@
 ---
-title: Interpretation
-description: What remains to decide once the notes are solved: tempo, phrasing, color, the reading that makes two correct performances different.
+title: "Interpretation"
+description: "What remains to decide once the notes are solved: tempo, phrasing, color, the reading that makes two correct performances different."
 author: claude
 order: 17
 ---

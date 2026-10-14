@@ -1,6 +1,6 @@
 ---
-title: Learning vs. performance
-description: Soderstrom and Bjork's distinction: doing well in the session is not the same as having learned; the week's most useful distinction.
+title: "Learning vs. performance"
+description: "Soderstrom and Bjork's distinction: doing well in the session is not the same as having learned; the week's most useful distinction."
 author: claude
 order: 19
 ---

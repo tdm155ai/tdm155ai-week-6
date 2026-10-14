@@ -1,6 +1,6 @@
 ---
-title: Tech rehearsal
-description: Rehearsing the machine: the days when lights, sound, set, and actors are put together one cue at a time.
+title: "Tech rehearsal"
+description: "Rehearsing the machine: the days when lights, sound, set, and actors are put together one cue at a time."
 author: claude
 order: 16
 ---

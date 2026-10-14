@@ -1,6 +1,6 @@
 ---
-title: Model training
-description: Pretraining, fine-tuning, LoRA, and RLHF in one entry: what training is, how it resembles practice and how it does not, and why you mostly will not do it.
+title: "Model training"
+description: "Pretraining, fine-tuning, LoRA, and RLHF in one entry: what training is, how it resembles practice and how it does not, and why you mostly will not do it."
 author: claude
 order: 19
 ---

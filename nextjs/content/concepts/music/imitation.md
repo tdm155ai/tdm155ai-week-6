@@ -1,6 +1,6 @@
 ---
-title: Imitation
-description: Learning by copying: transcribing a solo by ear, playing along with a record, the oral tradition behind jazz and most of the world's music.
+title: "Imitation"
+description: "Learning by copying: transcribing a solo by ear, playing along with a record, the oral tradition behind jazz and most of the world's music."
 author: claude
 order: 12
 ---

@@ -1,6 +1,6 @@
 ---
-title: The sketch
-description: Beethoven's sketchbooks: composition as drafts, studies, and discarded alternatives, kept on paper.
+title: "The sketch"
+description: "Beethoven's sketchbooks: composition as drafts, studies, and discarded alternatives, kept on paper."
 author: claude
 order: 19
 ---

@@ -1,6 +1,6 @@
 ---
-title: Rehearsal
-description: Practice for a group: coordinating parts, cues, and interpretation, which practicing alone cannot supply.
+title: "Rehearsal"
+description: "Practice for a group: coordinating parts, cues, and interpretation, which practicing alone cannot supply."
 author: claude
 order: 13
 ---

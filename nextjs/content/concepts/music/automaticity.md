@@ -1,6 +1,6 @@
 ---
-title: Automaticity
-description: Muscle memory: a passage the hands can play while the head does something else, and the price of getting there.
+title: "Automaticity"
+description: "Muscle memory: a passage the hands can play while the head does something else, and the price of getting there."
 author: claude
 order: 15
 ---

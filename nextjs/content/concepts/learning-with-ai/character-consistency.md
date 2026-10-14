@@ -1,6 +1,6 @@
 ---
-title: Character consistency
-description: The course's own case: keeping a character the same across images and scenes; when it is the model's problem and when it is your judgment.
+title: "Character consistency"
+description: "The course's own case: keeping a character the same across images and scenes; when it is the model's problem and when it is your judgment."
 author: claude
 order: 27
 ---

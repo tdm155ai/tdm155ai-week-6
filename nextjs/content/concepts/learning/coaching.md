@@ -1,6 +1,6 @@
 ---
-title: Coaching
-description: The coach's feedback loop: observe, diagnose, intervene, re-test; the correction, the note, the lesson.
+title: "Coaching"
+description: "The coach's feedback loop: observe, diagnose, intervene, re-test; the correction, the note, the lesson."
 author: claude
 order: 32
 ---

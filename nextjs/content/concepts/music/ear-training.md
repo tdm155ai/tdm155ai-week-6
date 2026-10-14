@@ -1,6 +1,6 @@
 ---
-title: Ear training
-description: Hearing as a trained skill: learning to name intervals, chords, and errors you could not hear before.
+title: "Ear training"
+description: "Hearing as a trained skill: learning to name intervals, chords, and errors you could not hear before."
 author: claude
 order: 18
 ---

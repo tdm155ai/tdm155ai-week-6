@@ -1,6 +1,6 @@
 ---
-title: Technique
-description: A codified system of movement that can be named, taught, and drilled: ballet, Graham, Cunningham, Horton.
+title: "Technique"
+description: "A codified system of movement that can be named, taught, and drilled: ballet, Graham, Cunningham, Horton."
 author: claude
 order: 11
 ---

@@ -1,6 +1,6 @@
 ---
-title: Character work
-description: Building a person through study: what the text says, what the actor researches, and what gets tried in the body.
+title: "Character work"
+description: "Building a person through study: what the text says, what the actor researches, and what gets tried in the body."
 author: claude
 order: 9
 ---

@@ -1,6 +1,6 @@
 ---
-title: Feedback
-description: Outcome, diagnosis, intervention: three kinds of feedback, who can give each, and the general account.
+title: "Feedback"
+description: "Outcome, diagnosis, intervention: three kinds of feedback, who can give each, and the general account."
 author: claude
 order: 27
 ---

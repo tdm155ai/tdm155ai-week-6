@@ -1,6 +1,6 @@
 ---
-title: What are you learning?
-description: The question for every exercise this week: what you learn when you do it, and what you learn when Claude does it.
+title: "What are you learning?"
+description: "The question for every exercise this week: what you learn when you do it, and what you learn when Claude does it."
 author: claude
 order: 1
 ---

@@ -1,6 +1,6 @@
 ---
-title: Knowing at an interface
-description: What you need to be able to do to say you know a thing you do through a tool: describe, inspect, perturb, recover.
+title: "Knowing at an interface"
+description: "What you need to be able to do to say you know a thing you do through a tool: describe, inspect, perturb, recover."
 author: claude
 order: 13
 ---

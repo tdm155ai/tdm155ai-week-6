@@ -1,6 +1,6 @@
 ---
-title: Learning with AI
-description: The week's problem: what changes about learning when the work can be delegated to a model, and what an agent skill is.
+title: "Learning with AI"
+description: "The week's problem: what changes about learning when the work can be delegated to a model, and what an agent skill is."
 author: claude
 order: 2
 ---

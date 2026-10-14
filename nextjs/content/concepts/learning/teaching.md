@@ -1,6 +1,6 @@
 ---
-title: Teaching
-description: What a teacher adds: demonstration, modeling, selection of the next task, and naming the thing the learner can't yet see.
+title: "Teaching"
+description: "What a teacher adds: demonstration, modeling, selection of the next task, and naming the thing the learner can't yet see."
 author: claude
 order: 31
 ---

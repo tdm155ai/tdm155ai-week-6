@@ -1,6 +1,6 @@
 ---
-title: Imitation
-description: Learning by copying a model: copywork, transcription, copying the masters; what copying trains and what it can't.
+title: "Imitation"
+description: "Learning by copying a model: copywork, transcription, copying the masters; what copying trains and what it can't."
 author: claude
 order: 17
 ---

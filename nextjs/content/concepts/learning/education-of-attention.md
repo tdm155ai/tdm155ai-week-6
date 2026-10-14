@@ -1,6 +1,6 @@
 ---
-title: Education of attention
-description: Ingold's account: skill is passed on by showing where to look, not by transmitting instructions.
+title: "Education of attention"
+description: "Ingold's account: skill is passed on by showing where to look, not by transmitting instructions."
 author: claude
 order: 30
 ---

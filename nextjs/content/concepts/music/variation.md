@@ -1,6 +1,6 @@
 ---
-title: Variation
-description: The theme and variations as a form of study: the same material under changing treatment, in composition and in the practice room.
+title: "Variation"
+description: "The theme and variations as a form of study: the same material under changing treatment, in composition and in the practice room."
 author: claude
 order: 16
 ---
