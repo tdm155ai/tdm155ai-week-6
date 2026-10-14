@@ -1,0 +1,32 @@
+# TDM 155AI week 6: instructions for AI assistants
+
+This repository is a student's notebook for TDM 155AI (*Making Stuff in the Age of AI*), week 6: Sketches and Studies (class October 14, 2026). It continues week 5's AI-enhanced notebook for the Unit 2 project, in which each student researches, learns, and prototypes a form of media they want to make; week 6 is the studies. This week's activity instructions are still being written; until they arrive, ask the student what they're working on.
+
+## Where things go
+
+Everything the site shows is Markdown in `nextjs/content/`, and each file is a page at the same path (`nextjs/content/readings/a.md` is `/readings/a`).
+
+- **`nextjs/content/readings/`**: the reading for the week, one file per item: a link, where it came from, and why it matters. `/readings` shows the folder as a docs site, every document in a sidebar; folders inside it become headed groups.
+- **`nextjs/content/notebook/`**: the student's own work: their notes, plans, observations, and the notes they dictate on `/dictate` or photograph on `/transcribe`. It's theirs. Don't rewrite or delete their notes; add to the notebook only when they ask, and say what you added.
+- **`nextjs/content/README.md`**: the home page.
+
+## Writing docs
+
+Every Markdown file you write starts with YAML frontmatter that gives its title, a one-line description, and you as its author, so the student (and anyone reading) can tell your work from theirs:
+
+```yaml
+---
+title: Lip-syncing to playback
+description: How to shoot a performance that matches the song, and how to practice it.
+author: claude
+---
+```
+
+Relative links between `.md` files work, and an image saved beside a doc shows in it. `order:` in the frontmatter sets a document's place in lists and in the readings sidebar (lower first; otherwise by title).
+
+## The app and the scripts
+
+- The site is a Next app in `nextjs/`. The student runs it themselves: `cd nextjs`, `pnpm install`, `pnpm dev`. Don't start it in the background.
+- `/graphics` is a graphics editor (lower thirds, titles, corner bugs) and `/graphics/record` records the webcam with a graphic on top into `nextjs/_media/recordings/`. They are TypeScript and Tailwind (`app/graphics/`, `lib/graphics/`), while the rest of the app is plain JavaScript and its own CSS; keep Tailwind inside `app/graphics/`.
+- `utils/` (at the repo root, outside the app) has scripts for generating text and images through OpenRouter, fal, and Harvard's HUIT gateways; see [`utils/README.md`](utils/README.md). Run them from the repo root with `pnpm`. What they make lands in `output/`.
+- Keys live in `.env` (for `utils/`) and `nextjs/.env.local` (for the app). Never print, copy, or commit them.

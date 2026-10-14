@@ -1,0 +1,42 @@
+# --- macOS ---
+.DS_Store
+._*
+
+# --- local-only folders: recordings and photographs land in nextjs/_media/; scratch and raw intake ---
+nextjs/_media/*
+!nextjs/_media/.gitkeep
+_raw/
+_temp/
+# what the utils/ scripts generate
+output/
+
+# --- secrets ---
+.env
+.env.*
+!.env.example
+
+# --- Node / JS ---
+node_modules/
+.pnpm-store/
+.next/
+out/
+dist/
+build/
+.turbo/
+.cache/
+*.tsbuildinfo
+npm-debug.log*
+pnpm-debug.log*
+.vercel
+
+# --- editors / tools ---
+.vscode/
+.idea/
+*.swp
+.claude/settings.local.json
+
+# --- logs ---
+*.log
+
+# --- Next generates this (TypeScript, for /graphics) ---
+next-env.d.ts
