@@ -1,6 +1,6 @@
 # tdm155ai-week-6
 
-TDM 155AI week 6 (class 2026-10-14): Sketches and Studies. A local Next app in `nextjs/` that renders a folder of Markdown as four sections (`/activities`, `/concepts`, `/skills`, `/explorations`), and the generation scripts for OpenRouter, fal, and HUIT in `utils/`. Private; nested in `ll-26-27/the-notebook` at `apps/tdm155ai-week-6/`.
+TDM 155AI week 6 (class 2026-10-14): Studies and Skills. A local Next app in `nextjs/` that renders a folder of Markdown as four sections (`/activities`, `/concepts`, `/skills`, `/explorations`), and the generation scripts for OpenRouter, fal, and HUIT in `utils/`. Private; nested in `ll-26-27/the-notebook` at `apps/tdm155ai-week-6/`.
 
 **Copied 2026-10-14 from The Notebook's `interface/`** (`ll-26-27/the-notebook` at `e75a6a3`), every tracked file except its own notes and README, then changed:
 

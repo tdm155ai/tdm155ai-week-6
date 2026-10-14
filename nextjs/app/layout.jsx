@@ -2,8 +2,8 @@ import "@fontsource-variable/inter";
 import "./globals.css";
 
 export const metadata = {
-  title: { default: "Sketches and Studies · TDM 155AI week 6", template: "%s · TDM 155AI week 6" },
-  description: "TDM 155AI week 6: Sketches and Studies. Concepts, skills, and explorations.",
+  title: { default: "Studies and Skills · TDM 155AI week 6", template: "%s · TDM 155AI week 6" },
+  description: "TDM 155AI week 6: Studies and Skills. Concepts, skills, and explorations.",
 };
 
 export const viewport = {

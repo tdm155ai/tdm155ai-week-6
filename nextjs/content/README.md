@@ -1,5 +1,5 @@
 ---
-title: Sketches and Studies
+title: Studies and Skills
 description: TDM 155AI, week 6 · October 14, 2026 · Skills, studies, and what learning looks like after AI
 ---
 

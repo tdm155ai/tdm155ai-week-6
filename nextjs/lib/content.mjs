@@ -7,7 +7,7 @@ export const site = {
   label: "Week 6",
   term: "TDM 155AI · Fall 2026",
   // The home page's heading and the line under it.
-  heading: "Sketches and Studies",
+  heading: "Studies and Skills",
   deck: "TDM 155AI, week 6 · October 14, 2026",
 };
 

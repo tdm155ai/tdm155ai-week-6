@@ -1,6 +1,6 @@
 # TDM 155AI week 6: instructions for AI assistants
 
-This repository is the week 6 reference and toolkit for TDM 155AI (*Making Stuff in the Age of AI*): Sketches and Studies (class October 14, 2026). Students are in the Unit 2 project, in which each researches, learns, and prototypes a form of media they want to make; week 6 is the studies. The site has four sections (activities, concepts, skills, explorations) and the repo has the generation scripts and the origin-story skill. Week 5's student notebook and capture tools are not in this repo (removed 2026-10-14).
+This repository is the week 6 reference and toolkit for TDM 155AI (*Making Stuff in the Age of AI*): Studies and Skills (class October 14, 2026). Students are in the Unit 2 project, in which each researches, learns, and prototypes a form of media they want to make; week 6 is the studies. The site has four sections (activities, concepts, skills, explorations) and the repo has the generation scripts and the origin-story skill. Week 5's student notebook and capture tools are not in this repo (removed 2026-10-14).
 
 ## This week
 
