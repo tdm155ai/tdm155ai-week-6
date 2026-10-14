@@ -38,8 +38,11 @@ TDM 155AI week 6 (class 2026-10-14): Studies and Skills. A local Next app in `ne
 | `/activities`, `/activities/...` | The day's plan as a docs site: the skills talk and one page per rotation |
 | `/concepts`, `/concepts/<category>/...` | The key concepts in two levels: the sidebar lists the categories, then, inside a category, only that category's concepts (with a link back to all categories) |
 | `/skills`, `/skills/...` | The skills pages as a docs site: sidebar of every document, the chosen one beside it |
+| `/tools` | The Tools tab: Capture, Live gallery, Video generator, Video gallery |
 | `/capture` | Webcam still capture, linked from Rotation 3 and the video skills challenge |
 | `/live` | Local `_media/` gallery, newest first, refreshing every five seconds |
+| `/tools/video` | The video generator: prompt, model, and a reference image uploaded or picked from the gallery; runs `utils/generate-video.mjs` as a child process and shows the equivalent command (`/api/video` starts and polls jobs) |
+| `/tools/videos` | The video gallery: every clip the generator made, looping, with prompt, model, and reference; jobs live in `_media/videos/<id>/` |
 | `/media/...` | Media files, with download and range support |
 | `/explorations`, `/explorations/...` | A gallery of 49 cases, field filtering, and illustrated detail pages with optional exercises |
 | `/who-used-to-make-this`, any other path | Any folder or document in `nextjs/content/` |

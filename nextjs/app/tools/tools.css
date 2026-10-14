@@ -1,0 +1,56 @@
+/* /tools: the hub, the video generator, and the video gallery. Shares the capture pages' palette and widths. */
+.tools-main { max-width: 1300px; margin: 0 auto; padding: 42px var(--gutter) 80px; }
+.tools-main h1 { margin: 18px 0; font-size: clamp(36px, 6vw, 64px); letter-spacing: -.045em; line-height: 1.05; }
+.tools-lede { max-width: 760px; color: var(--muted); font-size: 19px; line-height: 1.6; }
+.tools-links { display: flex; flex-wrap: wrap; gap: 14px 28px; margin: 24px 0 32px; color: var(--accent); font-size: 14px; }
+.tools-links a:hover { text-decoration: underline; }
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; margin-top: 28px; }
+.tools-grid a { display: grid; gap: 8px; padding: 22px 24px; border: 1px solid var(--line); border-radius: 12px; background: var(--wash); color: var(--ink); }
+.tools-grid a:hover { border-color: var(--accent); }
+.tools-grid strong { font-size: 22px; letter-spacing: -.02em; }
+.tools-grid span { color: var(--muted); font-size: 14px; line-height: 1.5; }
+
+/* the generator form */
+.video-form { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px 36px; margin-top: 8px; }
+.video-form fieldset { display: grid; gap: 14px; margin: 0; padding: 0; border: 0; min-width: 0; }
+.video-form legend { margin-bottom: 4px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.video-form label { display: grid; gap: 7px; color: var(--muted); font-size: 13px; }
+.video-form input, .video-form select, .video-form textarea { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); background: var(--wash); font: inherit; }
+.video-form textarea { min-height: 120px; resize: vertical; line-height: 1.5; }
+.video-form :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.video-form .video-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+.video-form .video-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; grid-column: 1 / -1; }
+.video-form button { min-height: 44px; padding: 11px 18px; border: 1px solid var(--line); border-radius: 6px; background: var(--wash); color: var(--ink); font: inherit; font-size: 14px; cursor: pointer; }
+.video-form button.video-go { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 650; }
+.video-form button:disabled { opacity: .45; cursor: default; }
+.video-hint { color: var(--muted); font-size: 13px; line-height: 1.6; }
+.video-hint code { font-size: 12px; }
+.video-command { margin: 0; padding: 14px 16px; border: 1px solid var(--line); border-radius: 8px; background: #080908; color: var(--ink); font-size: 12.5px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
+.video-status { margin-top: 10px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.video-status.video-status-done { border-color: var(--accent); color: var(--ink); }
+.video-status.video-status-failed { border-color: #c33; color: var(--ink); }
+.video-status pre { margin: 10px 0 0; max-height: 14em; overflow: auto; font-size: 12px; white-space: pre-wrap; color: var(--muted); }
+.video-status video { display: block; width: 100%; max-width: 720px; margin-top: 12px; border-radius: 8px; background: #080908; }
+
+/* picking a reference */
+.video-ref-modes { display: flex; flex-wrap: wrap; gap: 8px; }
+.video-ref-modes button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.video-gallery-pick { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; max-height: 360px; overflow: auto; padding: 4px; }
+.video-gallery-pick button { padding: 0; border: 2px solid transparent; border-radius: 8px; background: #080908; overflow: hidden; }
+.video-gallery-pick button[aria-pressed="true"] { border-color: var(--accent); }
+.video-gallery-pick img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.video-gallery-pick span { display: block; padding: 4px 6px; color: var(--muted); font-size: 11px; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.video-ref-preview { display: block; max-width: 320px; margin-top: 6px; border: 1px solid var(--line); border-radius: 8px; background: #080908; }
+
+/* the gallery of clips */
+.video-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; margin-top: 30px; }
+.video-gallery figure { margin: 0; border: 1px solid var(--line); background: var(--wash); border-radius: 10px; overflow: hidden; }
+.video-gallery video { display: block; width: 100%; aspect-ratio: 16/9; object-fit: contain; background: #080908; }
+.video-gallery .video-pending { display: grid; place-items: center; aspect-ratio: 16/9; background: #080908; color: var(--muted); font-size: 14px; }
+.video-gallery figcaption { display: grid; gap: 6px; padding: 14px; color: var(--muted); font-size: 13px; line-height: 1.55; overflow-wrap: anywhere; }
+.video-gallery figcaption strong { color: var(--ink); font-weight: 600; }
+.video-gallery figcaption .video-meta { font-size: 12px; }
+.video-gallery figcaption a { color: var(--accent); }
+.video-gallery .video-ref-thumb { display: inline-block; width: 64px; height: 36px; object-fit: cover; border-radius: 4px; vertical-align: middle; margin-right: 8px; background: #080908; }
+
+@media (max-width: 860px) { .video-form { grid-template-columns: 1fr; } }

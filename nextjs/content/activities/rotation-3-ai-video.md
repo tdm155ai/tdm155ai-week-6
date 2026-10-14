@@ -26,6 +26,7 @@ order: 4
 
 - [Challenge: build a set of video prompting skills](../skills/video-prompting-challenge.md): choose connected jobs, make references, approve stills, generate clips, and review continuity.
 - [Open the capture machine](/capture): use a webcam or the Web Presenter's USB webcam output to capture poses, props, camera framing, and the live composite. [View the capture gallery](/live). Network streaming is in process.
+- [Tools](/tools): the capture machine, the live gallery, the [video generator](/tools/video) (a form that runs the same `pnpm video` script, with a reference picked from the gallery or uploaded), and the [video gallery](/tools/videos) where every clip loops beside its prompt and reference.
 - [Kling AI prompt guide](https://kling.ai/blog/kling-ai-prompt-guide): scene direction, camera language, references, and multi-shot planning.
 - [fal's cinematography and prompting skills](../skills/reference/fal-skills.md): inspect the Markdown instructions and their reference files.
 - [Higgsfield's camera controls](../skills/reference/higgsfield.md): decide which controls your own skills and scripts need to express.

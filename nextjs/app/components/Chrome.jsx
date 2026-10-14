@@ -13,6 +13,7 @@ export function SiteHeader({ current = "" }) {
         <Link href="/concepts" aria-current={current === "concepts" ? "page" : undefined}>Concepts</Link>
         <Link href="/skills" aria-current={current === "skills" ? "page" : undefined}>Skills</Link>
         <Link href="/explorations" aria-current={current === "explorations" ? "page" : undefined}>Explorations</Link>
+        <Link href="/tools" aria-current={current === "tools" ? "page" : undefined}>Tools</Link>
       </nav>
     </header>
   );
