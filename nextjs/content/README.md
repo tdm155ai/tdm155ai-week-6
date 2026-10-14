@@ -23,3 +23,7 @@ We'll answer it in two directions at once.
 2. **Skills you build for Claude.** Where we do take AI help, we don't want the slot machine either. We want Claude Code to perform those jobs the right way, and the way to teach it is a *skill* in the other sense: a folder of instructions, examples, and tools that captures how a job should be done. Writing a good one requires knowing what good looks like, which brings us back to the first kind.
 
 The [concepts](/concepts) are the vocabulary for both: what each field calls its studies, how people learn, and what changes when a model can do the work. The [explorations](/explorations) are examples to take inspiration from: how artists, makers, and learners have thought about studies and skills, learning and practice, over time, in their own sketches, drafts, and routines. [Skills](/skills) is where we build the second kind, starting with how Claude skills work.
+
+## This week's practice
+
+Choose a skill you'd like to internalize yourself, or, alternatively, help Claude "internalize" it by creating a Claude skill. At least one thing, and hopefully more than one. It should be something that will be valuable for your project: either something you yourself want to learn and internalize, or something you want to learn to *externalize* by developing a skill for Claude. [The details are in Activities.](/activities/practice)
