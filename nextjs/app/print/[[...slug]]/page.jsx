@@ -82,7 +82,7 @@ export default async function PrintPage({ params }) {
             </li>
           ))}
         </ul>
-        {printSet.length === 0 && <p className="print-hint">To pick a set for a session, list documents in the frontmatter of <code>nextjs/content/README.md</code>: <code>print_set: [readings/some-reading, notebook/some-note]</code>.</p>}
+        {printSet.length === 0 && <p className="print-hint">To pick a set for a session, list documents in the frontmatter of <code>nextjs/content/README.md</code>: <code>print_set: [concepts/visual-art/study, skills/intro-to-skills]</code>.</p>}
       </main>
     );
   }

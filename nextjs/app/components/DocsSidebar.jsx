@@ -19,7 +19,7 @@ export function FolderContents({ folder }) {
   const docs = [...folder.docs, ...folder.folders.flatMap((child) => child.docs)];
   if (!docs.length) return <p className="empty-state">Nothing here yet. Add a Markdown file to <code>{folder.source}</code>.</p>;
   return (
-    <ul className="readings-index">
+    <ul className="docs-index">
       {docs.map((doc) => <li key={doc.href}><Link href={doc.href}>{doc.title}</Link>{doc.description && <span>{doc.description}</span>}</li>)}
     </ul>
   );

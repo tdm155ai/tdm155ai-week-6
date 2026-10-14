@@ -1,6 +1,6 @@
 # tdm155ai-week-6
 
-TDM 155AI week 6 (class 2026-10-14): Sketches and Studies. A local Next app in `nextjs/` that renders a folder of Markdown as three sections (`/concepts`, `/skills`, `/explorations`), and the generation scripts for OpenRouter, fal, and HUIT in `utils/`. Private; nested in `ll-26-27/the-notebook` at `apps/tdm155ai-week-6/`.
+TDM 155AI week 6 (class 2026-10-14): Sketches and Studies. A local Next app in `nextjs/` that renders a folder of Markdown as four sections (`/activities`, `/concepts`, `/skills`, `/explorations`), and the generation scripts for OpenRouter, fal, and HUIT in `utils/`. Private; nested in `ll-26-27/the-notebook` at `apps/tdm155ai-week-6/`.
 
 **Copied 2026-10-14 from The Notebook's `interface/`** (`ll-26-27/the-notebook` at `e75a6a3`), every tracked file except its own notes and README, then changed:
 
@@ -18,6 +18,7 @@ TDM 155AI week 6 (class 2026-10-14): Sketches and Studies. A local Next app in `
 | --- | --- |
 | `nextjs/` | The app: forced dark, Inter, red accent; `/print` is always light |
 | `nextjs/content/` | The site's Markdown: `content/a/b.md` is `/a/b` |
+| `nextjs/content/activities/` | The day's plan: the skills talk and the three lab rotations, at `/activities` with a sidebar |
 | `nextjs/content/concepts/` | The key concepts: one folder per category, its README the category's essay, at `/concepts` |
 | `nextjs/content/skills/` | The week's Claude skills, explained, at `/skills` with a sidebar |
 | `nextjs/content/explorations/` | Illustrated cases (sequences, studies, practice), at `/explorations` |
@@ -31,6 +32,7 @@ TDM 155AI week 6 (class 2026-10-14): Sketches and Studies. A local Next app in `
 | URL | What |
 | --- | --- |
 | `/` | The home page: the intro essay in `nextjs/content/README.md` |
+| `/activities`, `/activities/...` | The day's plan as a docs site: the skills talk and one page per rotation |
 | `/concepts`, `/concepts/<category>/...` | The key concepts in two levels: the sidebar lists the categories, then, inside a category, only that category's concepts (with a link back to all categories) |
 | `/skills`, `/skills/...` | The skills pages as a docs site: sidebar of every document, the chosen one beside it |
 | `/explorations`, `/explorations/...` | A gallery of 49 cases, field filtering, and illustrated detail pages with optional exercises |

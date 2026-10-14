@@ -7,7 +7,7 @@ import { DocsArticle, SidebarFolder } from "../../components/DocsSidebar.jsx";
 // Read the Markdown on each request so edits and new files appear on refresh.
 export const dynamic = "force-dynamic";
 
-// content/skills/ as a docs site (the readings route, retired 2026-10-14): every document in the folder, and in the folders inside it, listed in a sidebar
+// content/skills/ as a docs site: every document in the folder, and in the folders inside it, listed in a sidebar
 // (folders as headed groups), and the one you pick beside it. /skills shows skills/README.md. No previous/next
 // pager: you move between documents with the sidebar.
 

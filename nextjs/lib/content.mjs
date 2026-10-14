@@ -14,8 +14,7 @@ export const site = {
 // One folder of Markdown, nextjs/content/, is the whole site: content/a/b.md is /a/b and content/README.md is the
 // home page. Every file is a page, and every folder is a page too, showing its README.md (if any) above a list of what
 // it holds. Names starting with "_" or "." are skipped inside a folder.
-// - content/concepts/ and content/skills/ are shown as docs sites (app/concepts/, app/skills/), with every document in a sidebar; the
-//   readings folder and route were retired 2026-10-14.
+// - content/concepts/ and content/skills/ are shown as docs sites (app/concepts/, app/skills/), with documents in a sidebar.
 // - content/ai-research/ (if there is one) is labeled as written with AI on every page.
 const contentRoot = path.join(/* turbopackIgnore: true */ process.cwd(), "content");
 
@@ -90,14 +89,14 @@ async function readFolder(dir, slug, parentTitle) {
     description: typeof intro.data.description === "string" ? intro.data.description : "",
     eyebrow: typeof intro.data.eyebrow === "string" ? intro.data.eyebrow : parentTitle || "Folder",
     order: number(intro.data.order, 999),
-    // A step on the home page (`step: 1`), and the tool its page leads with (`tool: /capture`, `tool_title`, `tool_copy`).
+    // Optional ordering and related-tool metadata for content folders.
     step: number(intro.data.step, 0),
     subtitle: typeof intro.data.subtitle === "string" ? intro.data.subtitle : "",
     tool: typeof intro.data.tool === "string" ? intro.data.tool : "",
     toolTitle: typeof intro.data.tool_title === "string" ? intro.data.tool_title : "",
     toolCopy: typeof intro.data.tool_copy === "string" ? intro.data.tool_copy : "",
     // Smaller buttons side by side at the top of the folder's page (`tools: [{ href, title, copy }]`), and a heading
-    // above the list of what the folder holds (`list_heading: Your notes`).
+    // above the list of what the folder holds (`list_heading: Explore`).
     tools: Array.isArray(intro.data.tools) ? intro.data.tools.filter((tool) => typeof tool?.href === "string" && typeof tool?.title === "string") : [],
     listHeading: typeof intro.data.list_heading === "string" ? intro.data.list_heading : "",
     content: intro.content,

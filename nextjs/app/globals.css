@@ -327,11 +327,11 @@ body:has(.print-root) { background: #ffffff; color-scheme: light; }
 .category-index a:hover strong { color: var(--accent); }
 .category-index strong { font-size: 18px; letter-spacing: -.02em; }
 .category-note { color: var(--muted); font-size: 14px; line-height: 1.5; }
-.readings-index { max-width: 740px; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
-.readings-index li { display: flex; flex-direction: column; gap: 4px; padding: 16px 0; border-bottom: 1px solid var(--line); }
-.readings-index a { font-weight: 650; }
-.readings-index a:hover { color: var(--accent); }
-.readings-index span { color: var(--muted); font-size: 14px; }
+.docs-index { max-width: 740px; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.docs-index li { display: flex; flex-direction: column; gap: 4px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.docs-index a { font-weight: 650; }
+.docs-index a:hover { color: var(--accent); }
+.docs-index span { color: var(--muted); font-size: 14px; }
 
 @media (max-width: 760px) {
   .docs-shell { grid-template-columns: 1fr; gap: 0; }
