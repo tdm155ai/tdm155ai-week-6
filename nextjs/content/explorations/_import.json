@@ -1,0 +1,332 @@
+{
+  "repository": "ll-26-27/ll-week-6",
+  "commit": "5678a7b16701d6efbec15cbeec0357086d3486f0",
+  "imported_on": "2026-10-14",
+  "imported_by": "codex",
+  "pages": [
+    {
+      "destination": "explorations/sequences/beethoven-fur-elise.md",
+      "source": "apps/web/examples/sequences/beethoven-fur-elise.md",
+      "source_sha256": "2121e5a7191bfe6d064cc6c0ad2fc143926e241481451efee1d61994a965b2fa",
+      "changes": [
+        "Corrected pencil-detail attribution against Beethoven-Haus."
+      ]
+    },
+    {
+      "destination": "explorations/sequences/carroll-tenniel-alice.md",
+      "source": "apps/web/examples/sequences/carroll-tenniel-alice.md",
+      "source_sha256": "b366a3d207640207abaee27500beef0ee2b42b4cb430ba62d265520ef8db014f",
+      "changes": []
+    },
+    {
+      "destination": "explorations/sequences/constable-hay-wain.md",
+      "source": "apps/web/examples/sequences/constable-hay-wain.md",
+      "source_sha256": "5388e0ce2651631ae503dacf1cb23e4e39ffcdcfb93691d789d6f09831f65629",
+      "changes": []
+    },
+    {
+      "destination": "explorations/sequences/craig-stanislavski-hamlet.md",
+      "source": "apps/web/examples/sequences/craig-stanislavski-hamlet.md",
+      "source_sha256": "bbe06068c107a8df0c9804af859c76c6bbb971607fb0fa3d1f5b09173f8c72b3",
+      "changes": []
+    },
+    {
+      "destination": "explorations/sequences/gericault-raft-of-the-medusa.md",
+      "source": "apps/web/examples/sequences/gericault-raft-of-the-medusa.md",
+      "source_sha256": "472d9eeaceea302189c51e20458381ceb1141b2b83f83fcefd18848480901107",
+      "changes": [
+        "Avoided implying a settled chronology between differently dated studies."
+      ]
+    },
+    {
+      "destination": "explorations/sequences/jefferson-uva-rotunda.md",
+      "source": "apps/web/examples/sequences/jefferson-uva-rotunda.md",
+      "source_sha256": "f71ec301a99851efc23d4a44e3459f8c964e18fd48e99b68082681c9e4a881f8",
+      "changes": []
+    },
+    {
+      "destination": "explorations/sequences/keats-to-autumn.md",
+      "source": "apps/web/examples/sequences/keats-to-autumn.md",
+      "source_sha256": "f8f55d1ca43fa86e8a3150cf7e258e246002ba66a69faba08ff33ef957b4fb07",
+      "changes": [
+        "Linked the Houghton manuscript instead of embedding scans with unresolved redistribution conditions."
+      ]
+    },
+    {
+      "destination": "explorations/sequences/leonardo-anghiari-horses.md",
+      "source": "apps/web/examples/sequences/leonardo-anghiari-horses.md",
+      "source_sha256": "14e5cc12451d05d7849e865a6be7118a815c480e66e178ac71061e6a406f99c4",
+      "changes": []
+    },
+    {
+      "destination": "explorations/sequences/leonardo-sforza-horse.md",
+      "source": "apps/web/examples/sequences/leonardo-sforza-horse.md",
+      "source_sha256": "88e7549ce4d582fa2a28777aea2cea0a61b82267d5afa258e18cf20ee42dcf00",
+      "changes": []
+    },
+    {
+      "destination": "explorations/sequences/seurat-grande-jatte.md",
+      "source": "apps/web/examples/sequences/seurat-grande-jatte.md",
+      "source_sha256": "c22907ec16945bbd9a2bb5b8355898d3dbdc4a26c4fd2a4aea00409e2b5417f1",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/bach-art-of-fugue.md",
+      "source": "apps/web/examples/studies/bach-art-of-fugue.md",
+      "source_sha256": "17bb646c36e8877a11a2e382187d80dd416f0cc42d50aa5393bb459fc7d7a5e3",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/bach-inventions-and-sinfonias.md",
+      "source": "apps/web/examples/studies/bach-inventions-and-sinfonias.md",
+      "source_sha256": "e0570b7b0e2a908de7f9fab372392717bed8b28e4c849f1d6d28367b7badd682",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/beethoven-eroica-sketchbook.md",
+      "source": "apps/web/examples/studies/beethoven-eroica-sketchbook.md",
+      "source_sha256": "1cd917ed153d68c5c667987a8d0a3847aa6818d988e2cdb9c35ffc33b4731759",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/buxton-sketch-vs-prototype-wireframes.md",
+      "source": "apps/web/examples/studies/buxton-sketch-vs-prototype-wireframes.md",
+      "source_sha256": "cc38ad28bc7da3b849a8118f4a1da0fa9495348c32a43f87f7424a81eecc4e2a",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/chopin-etudes-and-the-exercise-books.md",
+      "source": "apps/web/examples/studies/chopin-etudes-and-the-exercise-books.md",
+      "source_sha256": "d50a9b0b866f101e50b2c7f629e8c2414c1e0bc7785689c0dbe677864ae6920e",
+      "changes": [
+        "Qualified the annotated page's document status."
+      ]
+    },
+    {
+      "destination": "explorations/studies/constable-hay-wain-full-scale-study.md",
+      "source": "apps/web/examples/studies/constable-hay-wain-full-scale-study.md",
+      "source_sha256": "e97df0d03a62d2e117ca805a5caa4e1795e8a8af3363e16036a2071e51f69b99",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/disney-storyboard.md",
+      "source": "apps/web/examples/studies/disney-storyboard.md",
+      "source_sha256": "169e883dbda7a8306560aa9a5ee8d17f4b3bd2eb2249a3799c0bfdb8779e3dbb",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/feuillet-choregraphie-notation.md",
+      "source": "apps/web/examples/studies/feuillet-choregraphie-notation.md",
+      "source_sha256": "fff888640fadf3345abac7ea358cc2f98acdaf41ba0a646b7fae6e6be2f80506",
+      "changes": [
+        "Qualified the scanned edition."
+      ]
+    },
+    {
+      "destination": "explorations/studies/fux-gradus-ad-parnassum.md",
+      "source": "apps/web/examples/studies/fux-gradus-ad-parnassum.md",
+      "source_sha256": "63e904c68075dffbbe98a5f4849a6c098735b4f1721f76f7ed75609a8ffaa431",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/hokusai-manga-model-book.md",
+      "source": "apps/web/examples/studies/hokusai-manga-model-book.md",
+      "source_sha256": "70e2e7777b1bc7a6ea150337d64bcdbd0ed4bd422be772319f52cd289c0798fb",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/irving-hamlet-promptbook.md",
+      "source": "apps/web/examples/studies/irving-hamlet-promptbook.md",
+      "source_sha256": "39cd7c3e11034f106686e6f34e2c3c49017f7decbd2e08adf06df1535c1bfdb3",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/jazz-transcription-and-play-alongs.md",
+      "source": "apps/web/examples/studies/jazz-transcription-and-play-alongs.md",
+      "source_sha256": "27ff63816ba1e5cd98f24fb72ec813d85a6c1baf4daf77c50b8edf0545e245e0",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/kurosawa-paintings.md",
+      "source": "apps/web/examples/studies/kurosawa-paintings.md",
+      "source_sha256": "26d2c66f4ce54ed0d44fce9ece7dae6e8af2b14a7a108a350c73392f14b62346",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/leonardo-adoration-perspective-study.md",
+      "source": "apps/web/examples/studies/leonardo-adoration-perspective-study.md",
+      "source_sha256": "6d0a966173338f3bdbc4915e50bdde06b590c38edb5aacd5eb0c00d6b3d3dadd",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/lessing-hamburg-dramaturgy.md",
+      "source": "apps/web/examples/studies/lessing-hamburg-dramaturgy.md",
+      "source_sha256": "a3e72fa1927daa5f25b44b0229ee5aa2c515dbe17986a5b5805315e616cf396e",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/neapolitan-partimenti.md",
+      "source": "apps/web/examples/studies/neapolitan-partimenti.md",
+      "source_sha256": "26a0ee66c5fd1410339fcd02b9469c04874605e66d64853feab0bca66ca7fdec",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/picasso-guernica-studies-and-states.md",
+      "source": "apps/web/examples/studies/picasso-guernica-studies-and-states.md",
+      "source_sha256": "1e0fcc8eacdde0c6b57a55c4d776634cab7d00a864eb75fecc53571211d26ead",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/pixar-story-reels.md",
+      "source": "apps/web/examples/studies/pixar-story-reels.md",
+      "source_sha256": "a68ab8bb3db5add204ed4b616b555b38b0fefd88d62b5ccb42bef6a00bd1d7e2",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/schlemmer-triadic-ballet-figure-plan.md",
+      "source": "apps/web/examples/studies/schlemmer-triadic-ballet-figure-plan.md",
+      "source_sha256": "7ba01e8aa073b3eef2250824928243ac4d8ae7b7434f2eef14a68b9be0f1dda4",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/seurat-grande-jatte-croquetons.md",
+      "source": "apps/web/examples/studies/seurat-grande-jatte-croquetons.md",
+      "source_sha256": "aaf15ab9657aa47aca545a9d6a24e1d383dacfd81f145268b5b8d28dd9855da4",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/stanislavski-seagull-production-score.md",
+      "source": "apps/web/examples/studies/stanislavski-seagull-production-score.md",
+      "source_sha256": "65c7968f31fc942bcc27e0e04450c1258fc94c0bede95a8d80f7069e192acf0e",
+      "changes": []
+    },
+    {
+      "destination": "explorations/studies/stepanov-notation-sergeyev-ground-plans.md",
+      "source": "apps/web/examples/studies/stepanov-notation-sergeyev-ground-plans.md",
+      "source_sha256": "cf1be57ef92e615ddfab09e511190b364da5ce39acbd33ad6afe64544cbaa9bb",
+      "changes": [
+        "Qualified the manuscript image's provenance."
+      ]
+    },
+    {
+      "destination": "explorations/studies/utzon-sydney-opera-house-sketch-to-sphere.md",
+      "source": "apps/web/examples/studies/utzon-sydney-opera-house-sketch-to-sphere.md",
+      "source_sha256": "c5895f5865d2dcf38b4859cc7b0d4cb110e9ed9c1f427b2be2348cfcf8d82bfd",
+      "changes": []
+    },
+    {
+      "destination": "explorations/practice/ai-and-practice-offloading.md",
+      "source": "apps/web/examples/practice/ai-and-practice-offloading.md",
+      "source_sha256": "99cb3e8e34f067a9868f25f9662b0c6a42cbdd67fa2384b8a971526380d6a017",
+      "changes": [
+        "Exercise suggestions labeled optional."
+      ]
+    },
+    {
+      "destination": "explorations/practice/ballet-class-cecchetti-weekly-programme.md",
+      "source": "apps/web/examples/practice/ballet-class-cecchetti-weekly-programme.md",
+      "source_sha256": "38c57f73e41110660877ffbf5b6ebb30f2360a83e7b3d422847e1ff8c5f59f6e",
+      "changes": []
+    },
+    {
+      "destination": "explorations/practice/cennini-and-the-workshop.md",
+      "source": "apps/web/examples/practice/cennini-and-the-workshop.md",
+      "source_sha256": "c4662b7f6076c4401aef4273a40121dd68083465ada192d7ddbb850aa2ce3ac3",
+      "changes": [
+        "Exercise suggestions labeled optional.",
+        "Removed unsupported oldest-practice-plan claim."
+      ]
+    },
+    {
+      "destination": "explorations/practice/copying-the-masters.md",
+      "source": "apps/web/examples/practice/copying-the-masters.md",
+      "source_sha256": "ddbc9b59e86754a1942a08beb90c512582604d37b6565df23415af4fd3b3959c",
+      "changes": [
+        "Exercise suggestions labeled optional."
+      ]
+    },
+    {
+      "destination": "explorations/practice/dalcroze-eurhythmics-and-appia.md",
+      "source": "apps/web/examples/practice/dalcroze-eurhythmics-and-appia.md",
+      "source_sha256": "0f3a5cfedfab4b35427e9b30754518ae81f05272b5a4d4193c1e96ed6a91f7ed",
+      "changes": []
+    },
+    {
+      "destination": "explorations/practice/deliberate-practice-and-the-10000-hours.md",
+      "source": "apps/web/examples/practice/deliberate-practice-and-the-10000-hours.md",
+      "source_sha256": "9e57d2f63674daec9362282aee731aa9f5d9ca88417eeec30116bddc1693a608",
+      "changes": [
+        "Exercise suggestions labeled optional.",
+        "Kept correlational results distinct from causal effects and removed unsupported consensus claim."
+      ]
+    },
+    {
+      "destination": "explorations/practice/desirable-difficulties.md",
+      "source": "apps/web/examples/practice/desirable-difficulties.md",
+      "source_sha256": "d05c9c7fae3cc6b31891bbbc0516b37604482b80a1248dd1227da1f520490bd6",
+      "changes": [
+        "Exercise suggestions labeled optional."
+      ]
+    },
+    {
+      "destination": "explorations/practice/forsythe-improvisation-technologies.md",
+      "source": "apps/web/examples/practice/forsythe-improvisation-technologies.md",
+      "source_sha256": "91439ea0126e899f434904d2f9530c7f0967837427f30ed561999aad3f54cc03",
+      "changes": []
+    },
+    {
+      "destination": "explorations/practice/franklin-spectator-exercise.md",
+      "source": "apps/web/examples/practice/franklin-spectator-exercise.md",
+      "source_sha256": "f12ff766b991d3e709a55e3682dfe80173a7dbd6ace1ca18577be98b90780e35",
+      "changes": []
+    },
+    {
+      "destination": "explorations/practice/gesture-drawing-and-the-timed-pose.md",
+      "source": "apps/web/examples/practice/gesture-drawing-and-the-timed-pose.md",
+      "source_sha256": "388fc6b0c06880f54fcb8333e8eb8a9f43a9882a3c0cc12a9e460944d061a0de",
+      "changes": [
+        "Exercise suggestions labeled optional."
+      ]
+    },
+    {
+      "destination": "explorations/practice/kata-and-shuhari.md",
+      "source": "apps/web/examples/practice/kata-and-shuhari.md",
+      "source_sha256": "a285fa7712b76d4ebb03f6b0855f23adca6635fbbf32b7e5f154aa3aac9526b3",
+      "changes": [
+        "Exercise suggestions labeled optional."
+      ]
+    },
+    {
+      "destination": "explorations/practice/marking-a-phrase.md",
+      "source": "apps/web/examples/practice/marking-a-phrase.md",
+      "source_sha256": "e8a34b7a2e888597722d66ab6abe8653714602a5cbbe653e86c99b084172719a",
+      "changes": []
+    },
+    {
+      "destination": "explorations/practice/meyerhold-biomechanics-etudes.md",
+      "source": "apps/web/examples/practice/meyerhold-biomechanics-etudes.md",
+      "source_sha256": "5050ec1cfad3069c090a297edd1da2a04067289ec40d0e96b571ff81ec6f81b5",
+      "changes": []
+    },
+    {
+      "destination": "explorations/practice/progymnasmata.md",
+      "source": "apps/web/examples/practice/progymnasmata.md",
+      "source_sha256": "70093c84a73f56fc3cc54bc1dcaced7585820ec038db843b8644ea0db2365da8",
+      "changes": []
+    },
+    {
+      "destination": "explorations/practice/queneau-exercises-in-style.md",
+      "source": "apps/web/examples/practice/queneau-exercises-in-style.md",
+      "source_sha256": "42807e18b6d534ed9659cf7037a688c5ddec0b525aea146ebda1e3b9eee14307",
+      "changes": []
+    },
+    {
+      "destination": "explorations/practice/scales-drills-and-chunks.md",
+      "source": "apps/web/examples/practice/scales-drills-and-chunks.md",
+      "source_sha256": "1d83e3d6397b4a1bb8d1518b865d414b055c931497cf59a71fe535d9d39fc815",
+      "changes": [
+        "Exercise suggestions labeled optional."
+      ]
+    }
+  ]
+}

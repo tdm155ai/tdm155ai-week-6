@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { getEntries, getEntry, getRoot, isAiGenerated, site } from "../../../lib/content.mjs";
 import Markdown from "../../components/Markdown.jsx";
+import ExplorationArtifacts from "../../components/ExplorationArtifacts.jsx";
+import ExplorationBody from "../../components/ExplorationBody.jsx";
 
 export const dynamic = "force-dynamic";
 
@@ -20,12 +22,13 @@ function PrintBar({ hint }) {
 }
 
 function Sheet({ entry, pageBreak }) {
+  const exploration = entry.kind === "doc" && entry.slug.startsWith("explorations/");
   return (
     <article className={pageBreak ? "print-card page-break" : "print-card"}>
       <p className="eyebrow">{isAiGenerated(entry) ? "AI-generated · " : ""}{entry.kind === "folder" ? "Folder" : entry.eyebrow}</p>
       <h1>{entry.title}</h1>
       {entry.description && <p className="lede">{entry.description}</p>}
-      {entry.content.trim() && <div className="prose"><Markdown doc={entry} print /></div>}
+      {exploration ? <><p className="exploration-provenance">From Madeleine's Learning Lab week 6 collection · Written with Claude</p><ExplorationArtifacts entry={entry} print /><ExplorationBody entry={entry} print /></> : entry.content.trim() && <div className="prose"><Markdown doc={entry} print /></div>}
     </article>
   );
 }
